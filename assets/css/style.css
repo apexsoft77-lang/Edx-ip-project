@@ -1,140 +1,598 @@
-/* General setup */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --primary-navy: #00262b;
+  --primary-orange: #d23f00; /* Main Orange */
+  --primary-orange-hover: #b53600;
+  --text-color: #333333;
+  --border-color: #d1d1d1;
+  --white: #ffffff;
+  --font-family: "Inter", sans-serif;
+  --transition-speed: 0.3s;
 }
 
-/* Navbar container */
+/* ============================
+      Global Reset
+  ============================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f9f9f9;
+    padding-top: 80px; 
+    min-height: 100vh;
+}
+
+/* ============================
+     Main Navbar (Mobile Base)
+  ============================ */
 .navbar {
+  background-color: var(--white);
+  height: 64px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  padding: 0 15px;
-  border-bottom: 2px solid #ccc;
-  white-space: nowrap;
-  background-color: #fff;
-  position: sticky;
+  padding: 0 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 100; /* Behind menu overlay */
 }
 
-/* Mobile icons */
-.hamburger,
-.search-mobile {
-  font-size: 25px;
-  display: block;
+/* Common Icon Button Style */
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--primary-navy);
   cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Mobile logo */
-.logo {
-  display: block;
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.logo img {
-  height: 40px;
+.logo-img {
+  height: 24px;
   width: auto;
 }
 
-/* Hide desktop nav by default */
-.nav-desktop {
+/* Hide Desktop Elements initially */
+.desktop-elements {
   display: none;
 }
 
-/* Desktop styles */
-@media (min-width: 768px) {
-  /* Hide mobile elements */
-  .hamburger,
-  .search-mobile,
-  .logo {
-    display: none;
+/* ============================
+      Mobile Full Screen Menu
+  ============================ */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--white);
+  z-index: 999; /* On top of everything */
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  overflow-y: auto; /* Scrollable if content is long */
+}
+
+/* Class to show menu via JS */
+.mobile-menu-overlay.active {
+  display: flex;
+}
+
+/* Menu Header: X | Logo | Search */
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Button Container */
+.menu-auth-buttons {
+  display: flex;
+  padding: 24px 16px;
+  gap: 16px;
+}
+
+.menu-btn {
+  flex: 1; /* Both take equal width */
+  padding: 12px 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Sign In Button (Outline) */
+.btn-signin-mobile {
+  border: 2px solid var(--primary-orange);
+  color: var(--primary-orange);
+  background: var(--white);
+}
+
+/* Sign In Hover Effect (Requested) */
+.btn-signin-mobile:hover {
+  background-color: var(--primary-orange);
+  color: var(--white);
+}
+
+/* Register Button (Solid) */
+.btn-register-mobile {
+  background: var(--primary-orange);
+  color: var(--white);
+  border: 2px solid var(--primary-orange);
+}
+
+.btn-register-mobile:hover {
+  background-color: var(--primary-orange-hover);
+  border-color: var(--primary-orange-hover);
+}
+
+/* Menu List Items */
+.menu-list {
+  list-style: none;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px;
+  border-top: 1px solid #eaeaea;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.menu-item:last-child {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* ============================
+      Desktop Media Query
+  ============================ */
+@media (min-width: 992px) {
+  .navbar {
+    height: 75px;
+    padding: 0 40px;
   }
 
-  /* Show desktop nav */
-  .nav-desktop {
+  /* Hide Mobile Specifics */
+  .hamburger-menu,
+  .mobile-search-btn,
+  .mobile-menu-overlay {
+    display: none !important; /* Force hide menu on resize */
+  }
+
+  /* Reset Logo Position */
+  .logo-container {
+    position: static;
+    transform: none;
+    margin-right: 24px;
+  }
+  .logo-img {
+    height: 28px;
+  }
+
+  /* Show Desktop Elements */
+  .desktop-elements {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  /* Desktop CSS (Same as previous) */
+  .left-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-grow: 1;
+  }
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .btn-learn {
+    background-color: var(--primary-navy);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 350px;
+    background: var(--white);
+  }
+  .search-wrapper input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-family: var(--font-family);
+    font-size: 15px;
+  }
+  .search-icon-inside {
+    background: none;
+    border: none;
+    color: var(--primary-navy);
+    cursor: pointer;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .nav-link:hover {
+    text-decoration: underline;
+    color: var(--primary-navy);
+  }
+
+  .btn-register {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+
+/* ============================
+      HERO SECTION
+   ============================ */ 
+/* Container */
+.hero-container {
+    width: 100%;
+    background-image: url(../images/hero-bg.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1200px; 
+    /* width: 100%; */
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Left Content */
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    line-height: 1.1;
+    color: #0d1f1a;
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #d94508; /* Orange/Red */
+    color: white;
+    border: 2px solid #d94508;
+}
+
+.btn-primary:hover {
+    background-color: #b83a06;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #d94508;
+    border: 2px solid #d94508;
+}
+
+.btn-secondary:hover {
+    background-color: #d94508;
+    color: white;
+}
+
+/* Right Content - Cards */
+.cards-container {
+    flex: 1.2;
+    display: flex;
+    gap: 20px;
+    min-width: 300px;
+    justify-content: flex-end;
+}
+
+/* Card Styling */
+.card {
+    width: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background-color: #032e31; /* Dark Teal Background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Header (White/Image area) */
+.card-header {
+    height: 100px;
+    background-color: white;
+    background-image: radial-gradient(#ddd 1px, transparent 1px);
+    background-size: 10px 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.header-yellow {
+    background-color: #fcefc5; /* Yellow background for second card */
+}
+
+.card-header .brand {
+    color: #5f6368;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Card Body (Dark area) */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.brand-sub {
+    font-size: 0.85rem;
+    color: #a0c2c3; /* Light teal text */
+    margin-bottom: 8px;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(255,255,255,0.2);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: #a0c2c3;
+}
+
+/* Carousel Dots Navigation */
+.carousel-nav {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 100%;
-  }
+}
 
-  .logo-desktop img {
-    height: 45px;
-    width: auto;
-    margin-right: 10px;
-  }
-
-  /* Learn button */
-  .learn-btn {
-    background: #052a33;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #032e31;
+    border-radius: 50%;
+    opacity: 0.3;
     cursor: pointer;
-    font-size: 16px;
-  }
+}
 
-  .learn-btn:hover {
-    background: #021a22;
-  }
+.dot.active {
+    opacity: 1;
+    background-color: #d94508;
+}
 
-  /* Search box */
-  .search-box {
+.nav-arrow {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .hero-content p {
+        margin: 0 auto 30px auto;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .cards-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================
+      FOOTER SECTION
+   ============================ */
+.footer-section {
+    background-color: var(--white);
+    padding: 40px 16px;
+    border-top: 1px solid #eaeaea;
+    margin-top: 20px; /* Space from content above */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 Column */
+    gap: 40px;
+}
+
+/* Footer Column Styling */
+.footer-col {
     display: flex;
-    align-items: center;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    padding: 5px 10px;
-    width: 320px;
-    min-width: 200px;
-  }
+    flex-direction: column;
+    gap: 16px;
+}
 
-  .search-box input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 15px;
-  }
+/* Headings */
+.footer-heading {
+    color: var(--primary-navy);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
 
-  .search-box i {
-    background-color: white;
-    color: black;
-    padding: 6px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-left: 5px;
-  }
+/* Sub-headings (Popular, For beginners) */
+.footer-subheading {
+    color: var(--primary-navy);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
 
-  /* Links */
-  .link {
+/* Links List */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 12px;
+}
+
+.footer-link {
     text-decoration: none;
-    color: #222;
-    font-size: 16px;
-  }
+    color: var(--text-color); /* Dark Grey #333 */
+    font-size: 15px;
+    line-height: 1.5;
+    transition: color 0.2s;
+}
 
-  .link:hover {
-    color: #0070f3;
-  }
+.footer-link:hover {
+    color: var(--primary-navy); /* Navy on hover */
+    text-decoration: underline;
+}
 
-  .link-sign-in {
-    margin-left: auto;
-  }
+/* Specific "View all" links are underlined in image */
+.link-underlined {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 
-  /* Register button */
-  .register-btn {
-    background: #e24d07;
-    color: white;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 16px;
-  }
+/* Helper to space out the 4th column blocks */
+.spacer-block {
+    margin-top: 32px;
+}
 
-  .register-btn:hover {
-    background: #c03e05;
-  }
+/* ============================
+   Desktop Media Query for Footer
+   ============================ */
+@media (min-width: 992px) {
+    .footer-section {
+        padding: 60px 40px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 Columns */
+        gap: 24px;
+        align-items: start;
+    }
 }
