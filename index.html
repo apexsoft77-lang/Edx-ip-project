@@ -1,281 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://www.edx.org/trademark-logos/edx-logo-elm.svg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
+      type="image/x-icon"
+    />
     <title>edX | online course</title>
 
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <!-- ===========================
              MAIN NAVBAR
          =========================== -->
     <nav class="navbar">
-        <!-- Open Menu Button -->
-        <button class="icon-btn hamburger-menu" id="openMenuBtn" aria-label="Open Menu">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+      <!-- Open Menu Button -->
+      <button
+        class="icon-btn hamburger-menu"
+        id="openMenuBtn"
+        aria-label="Open Menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-        <!-- Logo -->
-        <a href="#" class="logo-container">
-            <img src="https://www.edx.org/trademark-logos/edx-logo-elm.svg" alt="edX Logo" class="logo-img">
-        </a>
+      <!-- Logo -->
+      <a href="#" class="logo-container">
+        <img
+          src="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
+          alt="edX Logo"
+          class="logo-img"
+        />
+      </a>
 
-        <!-- Mobile Search Button -->
-        <button class="icon-btn mobile-search-btn" aria-label="Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+      <!-- Mobile Search Button -->
+      <button class="icon-btn mobile-search-btn" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
 
-        <!-- Desktop Elements -->
-        <div class="desktop-elements">
-            <div class="left-section">
-                <button class="btn-learn">
-                    Learn <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i>
-                </button>
-                <div class="search-wrapper">
-                    <input type="text" placeholder="What do you want to learn?">
-                    <button class="search-icon-inside"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </div>
-            <div class="right-section">
-                <a href="#" class="nav-link">edX For Business</a>
-                <a href="#" class="nav-link">Sign In</a>
-                <a href="#" class="btn-register">Register for free</a>
-            </div>
+      <!-- Desktop Elements -->
+      <div class="desktop-elements">
+        <div class="left-section">
+          <button class="btn-learn">
+            Learn
+            <i class="fa-solid fa-chevron-down" style="font-size: 12px"></i>
+          </button>
+          <div class="search-wrapper">
+            <input type="text" placeholder="What do you want to learn?" />
+            <button class="search-icon-inside">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
         </div>
+        <div class="right-section">
+          <a href="#" class="nav-link">edX For Business</a>
+          <a href="#" class="nav-link">Sign In</a>
+          <a href="#" class="btn-register">Register for free</a>
+        </div>
+      </div>
     </nav>
 
     <!-- ===========================
              MOBILE MENU OVERLAY
          =========================== -->
     <div class="mobile-menu-overlay" id="mobileMenu">
-        
-        <!-- Header: Close | Logo | Search -->
-        <div class="menu-header">
-            <button class="icon-btn" id="closeMenuBtn" style="font-size: 24px;">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+      <!-- Header: Close | Logo | Search -->
+      <div class="menu-header">
+        <button class="icon-btn" id="closeMenuBtn" style="font-size: 24px">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
 
-            <!-- Logo (Reused inside menu) -->
-            <img src="https://www.edx.org/trademark-logos/edx-logo-elm.svg" alt="edX Logo" class="logo-img">
+        <!-- Logo (Reused inside menu) -->
+        <img
+          src="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
+          alt="edX Logo"
+          class="logo-img"
+        />
 
-            <button class="icon-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+        <button class="icon-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Buttons: Sign In & Register -->
+      <div class="menu-auth-buttons">
+        <a href="#" class="menu-btn btn-signin-mobile">Sign in</a>
+        <a href="#" class="menu-btn btn-register-mobile">Register for free</a>
+      </div>
+
+      <!-- List Items -->
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>Browse by topic</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
         </div>
-
-        <!-- Buttons: Sign In & Register -->
-        <div class="menu-auth-buttons">
-            <a href="#" class="menu-btn btn-signin-mobile">Sign in</a>
-            <a href="#" class="menu-btn btn-register-mobile">Register for free</a>
+        <div class="menu-item">
+          <span>Earn a certificate</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
         </div>
-
-        <!-- List Items -->
-        <div class="menu-list">
-            <div class="menu-item">
-                <span>Browse by topic</span>
-                <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
-            </div>
-            <div class="menu-item">
-                <span>Earn a certificate</span>
-                <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
-            </div>
-            <div class="menu-item">
-                <span>Earn a degree</span>
-                <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
-            </div>
-            <div class="menu-item">
-                <span>Browse by educator</span>
-                <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
-            </div>
-            <div class="menu-item">
-                <span>Explore career resources</span>
-                <i class="fa-solid fa-chevron-down" style="font-size: 14px;"></i>
-            </div>
+        <div class="menu-item">
+          <span>Earn a degree</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
         </div>
+        <div class="menu-item">
+          <span>Browse by educator</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
+        </div>
+        <div class="menu-item">
+          <span>Explore career resources</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
+        </div>
+      </div>
     </div>
 
     <!-- ===========================
-          HERO SECTION WITH CARDS
-         =========================== -->  
-    <section class="hero-container">
-        <!-- LEFT SIDE: Text and Buttons -->
+        HERO CAROUSEL WRAPPER
+      =========================== -->
+    <div id="hero-carousel" class="carousel-wrapper">
+      <!-- SLIDE 1: Google Cloud -->
+      <section class="hero-container hero-slide active">
         <div class="hero-content">
-            <!-- 1. CHANGE HEADLINE HERE -->
-            <h1>Learn AI for <br>Productivity</h1>
-            
-            <!-- 2. CHANGE SUBTITLE HERE -->
-            <p>Build your skills with Google Cloud’s <strong>newest offerings!</strong></p>
-            
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">Explore offerings</a>
-                <a href="#" class="btn btn-secondary">Learn more</a>
-            </div>
+          <h1>Learn AI for <br />Productivity</h1>
+          <p>
+            Build your skills with Google Cloud's
+            <strong>newest offerings!</strong>
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Explore offerings</a>
+            <a href="#" class="btn btn-secondary">Learn more</a>
+          </div>
         </div>
 
-        <!-- RIGHT SIDE: Course Cards -->
-        <div class="cards-container">
-            
-            <!-- COURSE CARD 1 -->
-            <div class="card">
-                <div class="card-header">
-                    <span class="brand">Google Cloud</span>
-                </div>
-                <div class="card-body">
-                    <span class="brand-sub">Google Cloud</span>
-                    <!-- 3. CHANGE COURSE TITLE 1 HERE -->
-                    <h3>Gemini for Google Workspace</h3>
-                    <div class="badge">Professional Certificate</div>
-                    <div class="card-footer">
-                        <span>8 Courses</span>
-                    </div>
-                </div>
+        <div class="cardss-container">
+          <div class="cardses">
+            <div class="cards-header">
+              <span class="brands">Google Cloud</span>
             </div>
-
-            <!-- COURSE CARD 2 -->
-            <div class="card">
-                <div class="card-header header-yellow">
-                    <span class="brand">Google Cloud</span>
-                </div>
-                <div class="card-body">
-                    <span class="brand-sub">Google Cloud</span>
-                    <!-- 4. CHANGE COURSE TITLE 2 HERE -->
-                    <h3>Generate Smarter Generative AI Outputs</h3>
-                    <div class="badge">Professional Certificate</div>
-                    <div class="card-footer">
-                        <span>3 Courses</span>
-                    </div>
-                </div>
+            <div class="cards-body">
+              <span class="brands-sub">Google Cloud</span>
+              <h3>Gemini for Google Workspace</h3>
+              <div class="badge">Professional Certificate</div>
+              <div class="cards-footer">
+                <span>8 Courses</span>
+              </div>
             </div>
+          </div>
 
+          <div class="cardses">
+            <div class="cards-header header-yellow">
+              <span class="brands">IBM</span>
+            </div>
+            <div class="cards-body">
+              <span class="brands-sub">Google Cloud</span>
+              <h3>Generate Smarter Gen AI Outputs</h3>
+              <div class="badge">Professional Certificate</div>
+              <div class="cards-footer">
+                <span>3 Courses</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: Data Science -->
+      <section class="hero-container hero-slide">
+        <div class="hero-content">
+          <h1>Master Data Science Fast <br />& Effectifely</h1>
+          <p>Learn must-have skills for today's data-driven world.</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Explore offerings</a>
+            <a href="#" class="btn btn-secondary">Learn more</a>
+          </div>
         </div>
 
-        <!-- Carousel Navigation (Visual only) -->
-        <div class="carousel-nav">
-            <button class="nav-arrow">&lt;</button>
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <button class="nav-arrow">&gt;</button>
+        <div class="cardss-container">
+          <div class="cardses">
+            <div class="cards-header header-yellow">
+              <span class="brands">MIT</span>
+            </div>
+            <div class="cards-body">
+              <span class="brands-sub">MIT</span>
+              <h3>Data Science Essentials</h3>
+              <div class="badge">Professional Certificate</div>
+              <div class="cards-footer">
+                <span>5 Courses</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardses">
+            <div class="cards-header">
+              <span class="brands">Harvard</span>
+            </div>
+            <div class="cards-body">
+              <span class="brands-sub">Harvard University</span>
+              <h3>Machine Learning Foundations</h3>
+              <div class="badge">MicroMasters Program</div>
+              <div class="cards-footer">
+                <span>4 Courses</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- SLIDE 3: Data Science -->
+      <section class="hero-container hero-slide">
+        <div class="hero-content">
+          <h1>Generative AI Fundamentals Specialization</h1>
+          <p>Unlock and leverage the potential of generative AI.</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Explore offerings</a>
+            <a href="#" class="btn btn-secondary">Learn more</a>
+          </div>
+        </div>
+
+        <div class="cardss-container">
+          <div class="cardses">
+            <div class="cards-header header-yellow">
+              <span class="brands">IBM</span>
+            </div>
+            <div class="cards-body">
+              <span class="brands-sub">IBM</span>
+              <h3>Prompt Engineering Basics</h3>
+              <div class="badge">Professional Certificate</div>
+              <div class="cards-footer">
+                <span>20 Courses</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardses">
+            <div class="cards-header">
+              <span class="brands">Google</span>
+            </div>
+            <div class="cards-body">
+              <span class="brands-sub">Google</span>
+              <h3>generative AI on the business</h3>
+              <div class="badge">MicroMasters Program</div>
+              <div class="cards-footer">
+                <span>12 Courses</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHARED CAROUSEL CONTROLS -->
+      <div class="carousel-nav">
+        <button class="nav-arrow" id="prevBtn">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="dots-container">
+          <!-- Dots generated by JS or static -->
+          <span class="dot active" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <button class="nav-arrow" id="nextBtn">
+          <i class="fa-solid fa-arrow-right"></i>
+          <!--replace arrow by chevron if not work -->
+        </button>
+      </div>
+    </div>
+
+    <!-- ===================
+         PARTNER SECTION
+     ===================== -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="partners-logos">
+          <img src="assets/images/berkely.webp" alt="" />
+          <img src="assets/images/cambrige.webp" alt="" />
+          <img src="assets/images/colombia.webp" alt="" />
+          <img src="assets/images/google-cloud-re.jpg" alt="" />
+          <img src="assets/images/harvard.webp" alt="" />
+          <img src="assets/images/tudleft.webp" alt="" />
+          <img src="assets/images/texaswebp.webp" alt="" />
+          <img src="assets/images/massachu-tech.webp" alt="" />
+          <img src="assets/images/aws.webp" alt="" />
+          <img src="assets/images/tsinu.webp" alt="" />
+          <img src="columbia-logo.png" alt="" />
+        </div>
+      </div>
     </section>
-    
+
+    <!-- ====================
+          TRENDING COURSES
+      ====================== -->
+    <div class="main-container">
+      <h1 class="header-title">Trending on edX</h1>
+
+      <!-- Navigation Tabs -->
+      <div class="nav-tabs">
+        <!-- Added 'onclick' to trigger JS, passing the category name -->
+        <button class="tab-btn active" onclick="loadCourses(this, 'exec')">
+          Executive Education
+        </button>
+        <button class="tab-btn" onclick="loadCourses(this, 'courses')">
+          Courses
+        </button>
+        <button class="tab-btn" onclick="loadCourses(this, 'certificates')">
+          Certificates
+        </button>
+        <button class="tab-btn" onclick="loadCourses(this, 'masters')">
+          Master's Degrees
+        </button>
+        <button class="tab-btn" onclick="loadCourses(this, 'bachelors')">
+          Bachelor's Degrees
+        </button>
+      </div>
+
+      <!-- Filter Pills (Visual only, horizontal scroll) -->
+      <div class="filter-scroll-container">
+        <div class="filter-pills">
+          <span class="pill">Featured</span>
+          <span class="pill">AI & Digital Transformation</span>
+          <span class="pill">Sustainability</span>
+          <span class="pill">Leadership & Interpersonal Skills</span>
+          <span class="pill">Business Management & Strategy</span>
+          <span class="pill">Data Science & Analysis</span>
+          <span class="pill">Education</span>
+        </div>
+        <!-- Scroll bar visual line -->
+        <div class="scroll-track">
+          <div class="scroll-thumb"></div>
+        </div>
+      </div>
+
+      <!-- Course Grid Container -->
+      <!-- The content inside here will be changed by JavaScript -->
+      <div class="course-grid" id="courseContainer">
+        <!-- Default Content: Executive Education (Matches image) -->
+        <div class="cards">
+          <div class="cards-image-box">
+            <img
+  src="assets/images/course-2.jfif"              alt="Course Image"
+              class="course-img"
+            />
+            <div class="logo-box">
+              <img
+  src="assets/images/harvard-log.jfif"                alt="Logo"
+              />
+            </div>
+          </div>
+          <div class="cards-content">
+            <div>
+              <h3 class="course-title">AI Developer</h3>
+              <p class="course-provider">IBM</p>
+            </div>
+            <div class="badge">Executive Education</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="cards-image-box">
+            <img
+              src="assets/images/course-5.jfif"
+              alt="Course Image"
+              class="course-img"
+            />
+            <div class="logo-box">
+              <img
+  src="assets/images/harvard-log.jfif"                alt="Logo"
+              />
+            </div>
+          </div>
+          <div class="cards-content">
+            <div>
+              <h3 class="course-title">Artificial Intelligence Programme</h3>
+              <p class="course-provider">Oxford Saïd</p>
+            </div>
+            <div class="badge">Executive Education</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="cards-image-box">
+            <img
+              src="assets/images/course-1.jfif"
+              alt="Course Image"
+              class="course-img"
+            />
+            <div class="logo-box">
+              <img src="assets/images/IBM_logo.svg" alt="Logo" />
+            </div>
+          </div>
+          <div class="cards-content">
+            <div>
+              <h3 class="course-title">MBA Essentials</h3>
+              <p class="course-provider">LSE</p>
+            </div>
+            <div class="badge">Executive Education</div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="cards-image-box">
+            <img
+              src="assets/images/course-3.jfif"
+              alt="Course Image"
+              class="course-img"
+            />
+            <div class="logo-box">
+              <img src="assets/images/harvard-log.jfif" alt="Logo" />
+            </div>
+          </div>
+          <div class="cards-content">
+            <div>
+              <h3 class="course-title">Generative AI Engineering Course</h3>
+              <p class="course-provider">IBM</p>
+            </div>
+            <div class="badge">Executive Education</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ===========================
               FOOTER SECTION
          =========================== -->
-  <footer class="footer-section">
-    <div class="footer-container">
-        
+    <footer class="footer-section">
+      <div class="footer-container">
         <!-- COLUMN 1: Browse by topic -->
         <div class="footer-col">
-            <h3 class="footer-heading">Browse by topic</h3>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">Artificial intelligence</a></li>
-                <li><a href="#" class="footer-link">Computer science</a></li>
-                <li><a href="#" class="footer-link">Data analysis</a></li>
-                <li><a href="#" class="footer-link">Finance</a></li>
-                <li><a href="#" class="footer-link">Leadership</a></li>
-                <li><a href="#" class="footer-link link-underlined">View all topics</a></li>
-            </ul>
+          <h3 class="footer-heading">Browse by topic</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Artificial intelligence</a></li>
+            <li><a href="#" class="footer-link">Computer science</a></li>
+            <li><a href="#" class="footer-link">Data analysis</a></li>
+            <li><a href="#" class="footer-link">Finance</a></li>
+            <li><a href="#" class="footer-link">Leadership</a></li>
+            <li>
+              <a href="#" class="footer-link link-underlined"
+                >View all topics</a
+              >
+            </li>
+          </ul>
 
-            <!-- Sub Section: Popular -->
-            <span class="footer-subheading">Popular</span>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">CS50 courses from Harvard</a></li>
-                <li><a href="#" class="footer-link">Spanish</a></li>
-                <li><a href="#" class="footer-link">English</a></li>
-            </ul>
+          <!-- Sub Section: Popular -->
+          <span class="footer-subheading">Popular</span>
+          <ul class="footer-list">
+            <li>
+              <a href="#" class="footer-link">CS50 courses from Harvard</a>
+            </li>
+            <li><a href="#" class="footer-link">Spanish</a></li>
+            <li><a href="#" class="footer-link">English</a></li>
+          </ul>
 
-            <!-- Sub Section: For beginners -->
-            <span class="footer-subheading">For beginners</span>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">Python for beginners</a></li>
-                <li><a href="#" class="footer-link">Excel for beginners</a></li>
-                <li><a href="#" class="footer-link">Cybersecurity for beginners</a></li>
-            </ul>
+          <!-- Sub Section: For beginners -->
+          <span class="footer-subheading">For beginners</span>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Python for beginners</a></li>
+            <li><a href="#" class="footer-link">Excel for beginners</a></li>
+            <li>
+              <a href="#" class="footer-link">Cybersecurity for beginners</a>
+            </li>
+          </ul>
         </div>
 
         <!-- COLUMN 2: Earn a certificate -->
         <div class="footer-col">
-            <h3 class="footer-heading">Earn a certificate</h3>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">Artificial intelligence</a></li>
-                <li><a href="#" class="footer-link">Business & management</a></li>
-                <li><a href="#" class="footer-link">Data analysis & statistics</a></li>
-                <li><a href="#" class="footer-link">Project management</a></li>
-                <li><a href="#" class="footer-link">Finance</a></li>
-                <li><a href="#" class="footer-link link-underlined">View all certificate programs</a></li>
-            </ul>
+          <h3 class="footer-heading">Earn a certificate</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Artificial intelligence</a></li>
+            <li><a href="#" class="footer-link">Business & management</a></li>
+            <li>
+              <a href="#" class="footer-link">Data analysis & statistics</a>
+            </li>
+            <li><a href="#" class="footer-link">Project management</a></li>
+            <li><a href="#" class="footer-link">Finance</a></li>
+            <li>
+              <a href="#" class="footer-link link-underlined"
+                >View all certificate programs</a
+              >
+            </li>
+          </ul>
 
-            <!-- Sub Section: Popular -->
-            <span class="footer-subheading">Popular</span>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">AI under 3 months</a></li>
-                <li><a href="#" class="footer-link">Real estate under 3 months</a></li>
-                <li><a href="#" class="footer-link">Healthcare under 3 months</a></li>
-                <li><a href="#" class="footer-link">Leadership under 3 months</a></li>
-                <li><a href="#" class="footer-link">Information technology</a></li>
-            </ul>
+          <!-- Sub Section: Popular -->
+          <span class="footer-subheading">Popular</span>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">AI under 3 months</a></li>
+            <li>
+              <a href="#" class="footer-link">Real estate under 3 months</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Healthcare under 3 months</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Leadership under 3 months</a>
+            </li>
+            <li><a href="#" class="footer-link">Information technology</a></li>
+          </ul>
         </div>
 
         <!-- COLUMN 3: Earn a degree -->
         <div class="footer-col">
-            <h3 class="footer-heading">Earn a degree</h3>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">Bachelor's programs</a></li>
-                <li><a href="#" class="footer-link">Master's programs</a></li>
-                <li><a href="#" class="footer-link">Doctorate programs</a></li>
-            </ul>
+          <h3 class="footer-heading">Earn a degree</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Bachelor's programs</a></li>
+            <li><a href="#" class="footer-link">Master's programs</a></li>
+            <li><a href="#" class="footer-link">Doctorate programs</a></li>
+          </ul>
 
-            <!-- Sub Section: Popular -->
-            <span class="footer-subheading">Popular</span>
-            <ul class="footer-list">
-                <li><a href="#" class="footer-link">Online MBA</a></li>
-                <li><a href="#" class="footer-link">AI master's</a></li>
-                <li><a href="#" class="footer-link">Healthcare master's</a></li>
-                <li><a href="#" class="footer-link">Computer science master's</a></li>
-                <li><a href="#" class="footer-link">Computer & data science bachelor's</a></li>
-            </ul>
+          <!-- Sub Section: Popular -->
+          <span class="footer-subheading">Popular</span>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Online MBA</a></li>
+            <li><a href="#" class="footer-link">AI master's</a></li>
+            <li><a href="#" class="footer-link">Healthcare master's</a></li>
+            <li>
+              <a href="#" class="footer-link">Computer science master's</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link"
+                >Computer & data science bachelor's</a
+              >
+            </li>
+          </ul>
         </div>
 
         <!-- COLUMN 4: Browse by educator + Explore career -->
         <div class="footer-col">
-            <!-- Block A -->
-            <h3 class="footer-heading">Browse by educator</h3>
+          <!-- Block A -->
+          <h3 class="footer-heading">Browse by educator</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Harvard University</a></li>
+            <li><a href="#" class="footer-link">MIT</a></li>
+            <li>
+              <a href="#" class="footer-link">London School of Economics</a>
+            </li>
+            <li><a href="#" class="footer-link">Google</a></li>
+            <li><a href="#" class="footer-link">IBM</a></li>
+            <li><a href="#" class="footer-link">Microsoft</a></li>
+            <li>
+              <a href="#" class="footer-link link-underlined"
+                >View all educators</a
+              >
+            </li>
+          </ul>
+
+          <!-- Block B (Stacked below Block A) -->
+          <div class="spacer-block">
+            <h3 class="footer-heading">Explore career resources</h3>
             <ul class="footer-list">
-                <li><a href="#" class="footer-link">Harvard University</a></li>
-                <li><a href="#" class="footer-link">MIT</a></li>
-                <li><a href="#" class="footer-link">London School of Economics</a></li>
-                <li><a href="#" class="footer-link">Google</a></li>
-                <li><a href="#" class="footer-link">IBM</a></li>
-                <li><a href="#" class="footer-link">Microsoft</a></li>
-                <li><a href="#" class="footer-link link-underlined">View all educators</a></li>
+              <li><a href="#" class="footer-link">Software developer</a></li>
+              <li><a href="#" class="footer-link">Social media manager</a></li>
+              <li><a href="#" class="footer-link">AI engineer</a></li>
+              <li><a href="#" class="footer-link">Data scientist</a></li>
+              <li><a href="#" class="footer-link">Cybersecurity analyst</a></li>
             </ul>
-
-            <!-- Block B (Stacked below Block A) -->
-            <div class="spacer-block">
-                <h3 class="footer-heading">Explore career resources</h3>
-                <ul class="footer-list">
-                    <li><a href="#" class="footer-link">Software developer</a></li>
-                    <li><a href="#" class="footer-link">Social media manager</a></li>
-                    <li><a href="#" class="footer-link">AI engineer</a></li>
-                    <li><a href="#" class="footer-link">Data scientist</a></li>
-                    <li><a href="#" class="footer-link">Cybersecurity analyst</a></li>
-                </ul>
-            </div>
+          </div>
         </div>
+      </div>
+    </footer>
 
-    </div>
-</footer>
-
-
-
-   <script src="assets/script.js"></script>
-</body>
+    <script src="assets/script.js"></script>
+  </body>
 </html>
