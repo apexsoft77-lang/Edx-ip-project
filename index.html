@@ -8,562 +8,1094 @@
       href="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
       type="image/x-icon"
     />
-    <title>edX | online course</title>
+    <title>edX | online course platform</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 
     <!-- FontAwesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ===========================
-             MAIN NAVBAR
-         =========================== -->
-    <nav class="navbar">
-      <!-- Open Menu Button -->
-      <button
-        class="icon-btn hamburger-menu"
-        id="openMenuBtn"
-        aria-label="Open Menu"
+    
+    <!-- ========================== NAVBAR ========================== -->
+    <nav class="navbar sticky-top">
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
       >
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <!-- Logo -->
-      <a href="#" class="logo-container">
-        <img
-          src="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
-          alt="edX Logo"
-          class="logo-img"
-        />
-      </a>
-
-      <!-- Mobile Search Button -->
-      <button class="icon-btn mobile-search-btn" aria-label="Search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-
-      <!-- Desktop Elements -->
-      <div class="desktop-elements">
-        <div class="left-section">
-          <button class="btn-learn">
-            Learn
-            <i class="fa-solid fa-chevron-down" style="font-size: 12px"></i>
+        <!-- 1. LEFT SECTION: Hamburger (Mobile) + Logo + Learn (Desktop) -->
+        <div class="d-flex align-items-center">
+          <!-- Mobile Hamburger -->
+          <button id="openMenu" class="btn border-0 d-lg-none me-2">
+            <i class="fa-solid fa-bars fa-lg"></i>
           </button>
-          <div class="search-wrapper">
-            <input type="text" placeholder="What do you want to learn?" />
-            <button class="search-icon-inside">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+
+          <!-- Logo -->
+          <a class="navbar-brand me-4" href="#">
+            <img
+              src="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
+              alt="edX Logo"
+            />
+          </a>
+
+          <!-- Learn Button (Desktop Only) -->
+          <div class="d-none d-lg-block">
+            <a href="#" class="btn-learn">
+              <button class="border-0 rounded-5">
+                Learn<i class="fa-solid fa-chevron-down fa-xs ms-1"></i>
+              </button>
+            </a>
           </div>
         </div>
-        <div class="right-section">
-          <a href="#" class="nav-link">edX For Business</a>
-          <a href="#" class="nav-link">Sign In</a>
-          <a href="#" class="btn-register">Register for free</a>
+
+        <!-- 2. CENTER SECTION: Search Bar (Desktop Only) -->
+        <div class="search-container d-none d-lg-block">
+          <form class="w-100">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="What do you want to learn?"
+            />
+            <button type="submit" class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- 3. RIGHT SECTION: Links + Buttons + Search Icon (Mobile) -->
+        <div class="d-flex align-items-center">
+          <!-- Desktop Links -->
+          <div class="d-none d-lg-flex align-items-center">
+            <a href="#" class="nav-link-custom">edX For Business</a>
+            <a href="#" class="nav-link-custom">Sign In</a>
+            <button class="btn-register">Register for free</button>
+          </div>
+
+          <!-- Mobile Search Icon -->
+          <button class="btn d-lg-none ms-auto">
+            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+          </button>
         </div>
       </div>
     </nav>
 
-    <!-- ===========================
-             MOBILE MENU OVERLAY
-         =========================== -->
-    <div class="mobile-menu-overlay" id="mobileMenu">
-      <!-- Header: Close | Logo | Search -->
-      <div class="menu-header">
-        <button class="icon-btn" id="closeMenuBtn" style="font-size: 24px">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <!-- Logo (Reused inside menu) -->
+    <!-- ========================== MOBILE MENU OVERLAY ========================== -->
+    <div id="mobileMenu">
+      <div class="d-flex justify-content-between align-items-center mb-4">
         <img
           src="https://www.edx.org/trademark-logos/edx-logo-elm.svg"
+          height="30"
           alt="edX Logo"
-          class="logo-img"
         />
-
-        <button class="icon-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <button id="closeMenu" class="btn fs-2">&times;</button>
       </div>
 
-      <!-- Buttons: Sign In & Register -->
-      <div class="menu-auth-buttons">
-        <a href="#" class="menu-btn btn-signin-mobile">Sign in</a>
-        <a href="#" class="menu-btn btn-register-mobile">Register for free</a>
+      <div class="d-grid gap-3 mb-4">
+        <button class="btn btn-outline-dark fw-bold py-2">Sign In</button>
+        <button class="btn-register py-2">Register for free</button>
       </div>
 
-      <!-- List Items -->
-      <div class="menu-list">
-        <div class="menu-item">
-          <span>Browse by topic</span>
-          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
-        </div>
-        <div class="menu-item">
-          <span>Earn a certificate</span>
-          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
-        </div>
-        <div class="menu-item">
-          <span>Earn a degree</span>
-          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
-        </div>
-        <div class="menu-item">
-          <span>Browse by educator</span>
-          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
-        </div>
-        <div class="menu-item">
-          <span>Explore career resources</span>
-          <i class="fa-solid fa-chevron-down" style="font-size: 14px"></i>
-        </div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action fw-bold py-3"
+          >Browse by topic</a
+        >
+        <a href="#" class="list-group-item list-group-item-action fw-bold py-3"
+          >edX For Business</a
+        >
       </div>
     </div>
 
-    <!-- ===========================
-        HERO CAROUSEL WRAPPER
-      =========================== -->
-    <div id="hero-carousel" class="carousel-wrapper">
-      <!-- SLIDE 1: Google Cloud -->
-      <section class="hero-container hero-slide active">
-        <div class="hero-content">
-          <h1>Learn AI for <br />Productivity</h1>
-          <p>
-            Build your skills with Google Cloud's
-            <strong>newest offerings!</strong>
-          </p>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">Explore offerings</a>
-            <a href="#" class="btn btn-secondary">Learn more</a>
-          </div>
-        </div>
-
-        <div class="cardss-container">
-          <div class="cardses">
-            <div class="cards-header">
-              <span class="brands">Google Cloud</span>
-            </div>
-            <div class="cards-body">
-              <span class="brands-sub">Google Cloud</span>
-              <h3>Gemini for Google Workspace</h3>
-              <div class="badge">Professional Certificate</div>
-              <div class="cards-footer">
-                <span>8 Courses</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cardses">
-            <div class="cards-header header-yellow">
-              <span class="brands">IBM</span>
-            </div>
-            <div class="cards-body">
-              <span class="brands-sub">Google Cloud</span>
-              <h3>Generate Smarter Gen AI Outputs</h3>
-              <div class="badge">Professional Certificate</div>
-              <div class="cards-footer">
-                <span>3 Courses</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SLIDE 2: Data Science -->
-      <section class="hero-container hero-slide">
-        <div class="hero-content">
-          <h1>Master Data Science Fast <br />& Effectifely</h1>
-          <p>Learn must-have skills for today's data-driven world.</p>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">Explore offerings</a>
-            <a href="#" class="btn btn-secondary">Learn more</a>
-          </div>
-        </div>
-
-        <div class="cardss-container">
-          <div class="cardses">
-            <div class="cards-header header-yellow">
-              <span class="brands">MIT</span>
-            </div>
-            <div class="cards-body">
-              <span class="brands-sub">MIT</span>
-              <h3>Data Science Essentials</h3>
-              <div class="badge">Professional Certificate</div>
-              <div class="cards-footer">
-                <span>5 Courses</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cardses">
-            <div class="cards-header">
-              <span class="brands">Harvard</span>
-            </div>
-            <div class="cards-body">
-              <span class="brands-sub">Harvard University</span>
-              <h3>Machine Learning Foundations</h3>
-              <div class="badge">MicroMasters Program</div>
-              <div class="cards-footer">
-                <span>4 Courses</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SLIDE 3: Data Science -->
-      <section class="hero-container hero-slide">
-        <div class="hero-content">
-          <h1>Generative AI Fundamentals Specialization</h1>
-          <p>Unlock and leverage the potential of generative AI.</p>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">Explore offerings</a>
-            <a href="#" class="btn btn-secondary">Learn more</a>
-          </div>
-        </div>
-
-        <div class="cardss-container">
-          <div class="cardses">
-            <div class="cards-header header-yellow">
-              <span class="brands">IBM</span>
-            </div>
-            <div class="cards-body">
-              <span class="brands-sub">IBM</span>
-              <h3>Prompt Engineering Basics</h3>
-              <div class="badge">Professional Certificate</div>
-              <div class="cards-footer">
-                <span>20 Courses</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cardses">
-            <div class="cards-header">
-              <span class="brands">Google</span>
-            </div>
-            <div class="cards-body">
-              <span class="brands-sub">Google</span>
-              <h3>generative AI on the business</h3>
-              <div class="badge">MicroMasters Program</div>
-              <div class="cards-footer">
-                <span>12 Courses</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SHARED CAROUSEL CONTROLS -->
-      <div class="carousel-nav">
-        <button class="nav-arrow" id="prevBtn">
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-
-        <div class="dots-container">
-          <!-- Dots generated by JS or static -->
-          <span class="dot active" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
-        <button class="nav-arrow" id="nextBtn">
-          <i class="fa-solid fa-arrow-right"></i>
-          <!--replace arrow by chevron if not work -->
-        </button>
-      </div>
-    </div>
-
-    <!-- ===================
-         PARTNER SECTION
-     ===================== -->
-    <section class="partners-section">
+    <!-- ========================== HERO SECTION ========================== -->
+    <section class="hero">
       <div class="container">
-        <div class="partners-logos">
-          <img src="assets/images/berkely.webp" alt="" />
-          <img src="assets/images/cambrige.webp" alt="" />
-          <img src="assets/images/colombia.webp" alt="" />
-          <img src="assets/images/google-cloud-re.jpg" alt="" />
-          <img src="assets/images/harvard.webp" alt="" />
-          <img src="assets/images/tudleft.webp" alt="" />
-          <img src="assets/images/texaswebp.webp" alt="" />
-          <img src="assets/images/massachu-tech.webp" alt="" />
-          <img src="assets/images/aws.webp" alt="" />
-          <img src="assets/images/tsinu.webp" alt="" />
-          <img src="columbia-logo.png" alt="" />
+        <div class="row align-items-center">
+          <!-- Hero Text -->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="hero-title">Generative AI<br />Fundamentals</h1>
+            <p class="hero-subtitle">
+              Unlock and leverage the potential of generative AI.
+            </p>
+            <div class="d-flex flex-column flex-lg-row gap-3">
+              <button class="btn btn-register btn-lg w-100">
+                Explore offerings
+              </button>
+              <button
+                class="btn btn-outline-danger btn-lg w-100"
+                style="border-radius: 0; font-weight: 700"
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+
+          <!-- Cards -->
+          <div class="col-lg-6">
+            <div class="row g-4 ps-lg-4">
+              <!-- Card 1 -->
+              <div class="col-md-6">
+                <div class="course-cardS">
+                  <div class="card-header-brand left-card-brand">IBM</div>
+                  <div class="card-body-dark">
+                    <div>
+                      <h5 class="fw-bold">Prompt Engineering Basics</h5>
+                      <span class="badge-custom">Professional Certificate</span>
+                    </div>
+                    <small class="mt-4 d-block opacity-75">20 Courses</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-md-6">
+                <div class="course-cardS">
+                  <div class="card-header-brand">Google</div>
+                  <div class="card-body-dark">
+                    <div>
+                      <h5 class="fw-bold">Generative AI on the business</h5>
+                      <span class="badge-custom">MicroMasters Program</span>
+                    </div>
+                    <small class="mt-4 d-block opacity-75">12 Courses</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ====================
-          TRENDING COURSES
-      ====================== -->
-    <div class="main-container">
-      <h1 class="header-title">Trending on edX</h1>
-
-      <!-- Navigation Tabs -->
-      <div class="nav-tabs">
-        <!-- Added 'onclick' to trigger JS, passing the category name -->
-        <button class="tab-btn active" onclick="loadCourses(this, 'exec')">
-          Executive Education
-        </button>
-        <button class="tab-btn" onclick="loadCourses(this, 'courses')">
-          Courses
-        </button>
-        <button class="tab-btn" onclick="loadCourses(this, 'certificates')">
-          Certificates
-        </button>
-        <button class="tab-btn" onclick="loadCourses(this, 'masters')">
-          Master's Degrees
-        </button>
-        <button class="tab-btn" onclick="loadCourses(this, 'bachelors')">
-          Bachelor's Degrees
-        </button>
-      </div>
-
-      <!-- Filter Pills (Visual only, horizontal scroll) -->
-      <div class="filter-scroll-container">
-        <div class="filter-pills">
-          <span class="pill">Featured</span>
-          <span class="pill">AI & Digital Transformation</span>
-          <span class="pill">Sustainability</span>
-          <span class="pill">Leadership & Interpersonal Skills</span>
-          <span class="pill">Business Management & Strategy</span>
-          <span class="pill">Data Science & Analysis</span>
-          <span class="pill">Education</span>
-        </div>
-        <!-- Scroll bar visual line -->
-        <div class="scroll-track">
-          <div class="scroll-thumb"></div>
-        </div>
-      </div>
-
-      <!-- Course Grid Container -->
-      <!-- The content inside here will be changed by JavaScript -->
-      <div class="course-grid" id="courseContainer">
-        <!-- Default Content: Executive Education (Matches image) -->
-        <div class="cards">
-          <div class="cards-image-box">
+    <!-- ========================== PARTNER LOGOS SECTION ========================== -->
+    <section class="partners-section">
+      <div class="container">
+        <!-- row-cols-2 (mobile), row-cols-md-3 (tablet), row-cols-lg-6 (desktop) -->
+        <div
+          class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center align-items-center text-center"
+        >
+          <!-- MIT -->
+          <div class="col">
             <img
-  src="assets/images/course-2.jfif"              alt="Course Image"
-              class="course-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png"
+              alt="MIT"
+              class="partner-logo"
             />
-            <div class="logo-box">
-              <img
-  src="assets/images/harvard-log.jfif"                alt="Logo"
-              />
-            </div>
           </div>
-          <div class="cards-content">
-            <div>
-              <h3 class="course-title">AI Developer</h3>
-              <p class="course-provider">IBM</p>
-            </div>
-            <div class="badge">Executive Education</div>
-          </div>
-        </div>
 
-        <div class="cards">
-          <div class="cards-image-box">
+          <!-- Harvard -->
+          <div class="col">
             <img
-              src="assets/images/course-5.jfif"
-              alt="Course Image"
-              class="course-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/2560px-Harvard_University_logo.svg.png"
+              alt="Harvard University"
+              class="partner-logo"
             />
-            <div class="logo-box">
-              <img
-  src="assets/images/harvard-log.jfif"                alt="Logo"
-              />
-            </div>
           </div>
-          <div class="cards-content">
-            <div>
-              <h3 class="course-title">Artificial Intelligence Programme</h3>
-              <p class="course-provider">Oxford Saïd</p>
-            </div>
-            <div class="badge">Executive Education</div>
-          </div>
-        </div>
 
-        <div class="cards">
-          <div class="cards-image-box">
+          <!-- Berkeley -->
+          <div class="col">
             <img
-              src="assets/images/course-1.jfif"
-              alt="Course Image"
-              class="course-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png"
+              alt="MIT"
+              class="partner-logo"
             />
-            <div class="logo-box">
-              <img src="assets/images/IBM_logo.svg" alt="Logo" />
-            </div>
           </div>
-          <div class="cards-content">
-            <div>
-              <h3 class="course-title">MBA Essentials</h3>
-              <p class="course-provider">LSE</p>
-            </div>
-            <div class="badge">Executive Education</div>
-          </div>
-        </div>
 
-        <div class="cards">
-          <div class="cards-image-box">
+          <!-- Google Cloud -->
+          <div class="col">
             <img
-              src="assets/images/course-3.jfif"
-              alt="Course Image"
-              class="course-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png"
+              alt="Google Cloud"
+              class="partner-logo"
             />
-            <div class="logo-box">
-              <img src="assets/images/harvard-log.jfif" alt="Logo" />
-            </div>
           </div>
-          <div class="cards-content">
-            <div>
-              <h3 class="course-title">Generative AI Engineering Course</h3>
-              <p class="course-provider">IBM</p>
-            </div>
-            <div class="badge">Executive Education</div>
+
+          <!-- Cambridge -->
+          <div class="col">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/2560px-Harvard_University_logo.svg.png"
+              alt="Harvard University"
+              class="partner-logo"
+            />
+          </div>
+
+          <!-- Columbia -->
+          <div class="col">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png"
+              alt="Google Cloud"
+              class="partner-logo"
+            />
           </div>
         </div>
       </div>
+    </section>
+
+ <!-- ==============================TRENDING EDX========================= -->
+<div class="container mt-5">
+  <h2 class="mb-4 trending-title">Trending on edX</h2>
+
+  <!-- Category Filter -->
+  <div class="category-scroll mb-4">
+    <button class="btn category-btn active" onclick="filterCategory('All')">All</button>
+    <button class="btn category-btn" onclick="filterCategory('AI & Digital Transformation')">AI & Digital Transformation</button>
+    <button class="btn category-btn" onclick="filterCategory('Business Management & Strategy')">Business Management & Strategy</button>
+    <button class="btn category-btn" onclick="filterCategory('Data Science & Analysis')">Data Science & Analysis</button>
+    <button class="btn category-btn" onclick="filterCategory('Sustainability')">Sustainability</button>
+  </div>
+
+
+  <!-- Course Cards -->
+  <div class="row g-3" id="course-list"> <!-- ADDED g-3 -->
+    
+    <div class="col-12 col-md-6 col-lg-3 course-card"
+         data-category="AI & Digital Transformation">
+      <img src="../assets/images/course-1.jfif" class="img-fluid mb-3" alt="AI Developer" />
+      <h5>Mobile App Development with Flutter</h5>
+      <p>IBM</p>
+      <p class="card-footer">Excutive Education</p>
     </div>
-    <!-- ===========================
-              FOOTER SECTION
-         =========================== -->
-    <footer class="footer-section">
-      <div class="footer-container">
-        <!-- COLUMN 1: Browse by topic -->
-        <div class="footer-col">
-          <h3 class="footer-heading">Browse by topic</h3>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">Artificial intelligence</a></li>
-            <li><a href="#" class="footer-link">Computer science</a></li>
-            <li><a href="#" class="footer-link">Data analysis</a></li>
-            <li><a href="#" class="footer-link">Finance</a></li>
-            <li><a href="#" class="footer-link">Leadership</a></li>
-            <li>
-              <a href="#" class="footer-link link-underlined"
-                >View all topics</a
-              >
-            </li>
-          </ul>
 
-          <!-- Sub Section: Popular -->
-          <span class="footer-subheading">Popular</span>
-          <ul class="footer-list">
-            <li>
-              <a href="#" class="footer-link">CS50 courses from Harvard</a>
-            </li>
-            <li><a href="#" class="footer-link">Spanish</a></li>
-            <li><a href="#" class="footer-link">English</a></li>
-          </ul>
+    <div class="col-12 col-md-6 col-lg-3 course-card"
+         data-category="Business Management & Strategy">
+      <img src="../assets/images/course-2.jfif" class="img-fluid mb-3" alt="AI Course" />
+      <h5>Artificial Intelligence Programme</h5>
+      <p>Oxford Said</p>
+      <p class="card-footer">Excutive Education</p>
+    </div>
 
-          <!-- Sub Section: For beginners -->
-          <span class="footer-subheading">For beginners</span>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">Python for beginners</a></li>
-            <li><a href="#" class="footer-link">Excel for beginners</a></li>
-            <li>
-              <a href="#" class="footer-link">Cybersecurity for beginners</a>
-            </li>
-          </ul>
-        </div>
+    <div class="col-12 col-md-6 col-lg-3 course-card"
+         data-category="Sustainability">
+      <img src="../assets/images/course-3.jfif" class="img-fluid mb-3" alt="Web Dev Course" />
+      <h5>Introduction to Web Development (HTML, CSS, JS)</h5>
+      <p>IBM</p>
+      <p class="card-footer">Excutive Education</p>
+    </div>
 
-        <!-- COLUMN 2: Earn a certificate -->
-        <div class="footer-col">
-          <h3 class="footer-heading">Earn a certificate</h3>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">Artificial intelligence</a></li>
-            <li><a href="#" class="footer-link">Business & management</a></li>
-            <li>
-              <a href="#" class="footer-link">Data analysis & statistics</a>
-            </li>
-            <li><a href="#" class="footer-link">Project management</a></li>
-            <li><a href="#" class="footer-link">Finance</a></li>
-            <li>
-              <a href="#" class="footer-link link-underlined"
-                >View all certificate programs</a
-              >
-            </li>
-          </ul>
+    <div class="col-12 col-md-6 col-lg-3 course-card"
+         data-category="Data Science & Analysis">
+      <img src="../assets/images/course-4.jfif" class="img-fluid mb-3" alt="Python Course" />
+      <h5>Python Programming Fundamentals</h5>
+      <p>IBM</p>
+      <p class="card-footer">Excutive Education</p>
+    </div>
 
-          <!-- Sub Section: Popular -->
-          <span class="footer-subheading">Popular</span>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">AI under 3 months</a></li>
-            <li>
-              <a href="#" class="footer-link">Real estate under 3 months</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Healthcare under 3 months</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">Leadership under 3 months</a>
-            </li>
-            <li><a href="#" class="footer-link">Information technology</a></li>
-          </ul>
-        </div>
+  </div>
+</div>
 
-        <!-- COLUMN 3: Earn a degree -->
-        <div class="footer-col">
-          <h3 class="footer-heading">Earn a degree</h3>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">Bachelor's programs</a></li>
-            <li><a href="#" class="footer-link">Master's programs</a></li>
-            <li><a href="#" class="footer-link">Doctorate programs</a></li>
-          </ul>
 
-          <!-- Sub Section: Popular -->
-          <span class="footer-subheading">Popular</span>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">Online MBA</a></li>
-            <li><a href="#" class="footer-link">AI master's</a></li>
-            <li><a href="#" class="footer-link">Healthcare master's</a></li>
-            <li>
-              <a href="#" class="footer-link">Computer science master's</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link"
-                >Computer & data science bachelor's</a
-              >
-            </li>
-          </ul>
-        </div>
+<!-- ==================HORIZONTAL CARD==================== -->
+<div class="container-fluid my-5">
+  <div class="learning-section">
+    <div class="row align-items-center">
 
-        <!-- COLUMN 4: Browse by educator + Explore career -->
-        <div class="footer-col">
-          <!-- Block A -->
-          <h3 class="footer-heading">Browse by educator</h3>
-          <ul class="footer-list">
-            <li><a href="#" class="footer-link">Harvard University</a></li>
-            <li><a href="#" class="footer-link">MIT</a></li>
-            <li>
-              <a href="#" class="footer-link">London School of Economics</a>
-            </li>
-            <li><a href="#" class="footer-link">Google</a></li>
-            <li><a href="#" class="footer-link">IBM</a></li>
-            <li><a href="#" class="footer-link">Microsoft</a></li>
-            <li>
-              <a href="#" class="footer-link link-underlined"
-                >View all educators</a
-              >
-            </li>
-          </ul>
+      <!-- LEFT TEXT -->
+      <div class="col-12 col-lg-6 p-5 text-white">
+        <h2 class="fw-bold mb-3">
+          <span class="star-icon">✦</span>
+          <em class="fs-1">Find your learning path</em>
+        </h2>
 
-          <!-- Block B (Stacked below Block A) -->
-          <div class="spacer-block">
-            <h3 class="footer-heading">Explore career resources</h3>
-            <ul class="footer-list">
-              <li><a href="#" class="footer-link">Software developer</a></li>
-              <li><a href="#" class="footer-link">Social media manager</a></li>
-              <li><a href="#" class="footer-link">AI engineer</a></li>
-              <li><a href="#" class="footer-link">Data scientist</a></li>
-              <li><a href="#" class="footer-link">Cybersecurity analyst</a></li>
-            </ul>
-          </div>
-        </div>
+        <p class="mb-4 fs-5">
+          Answer a few questions to get personalized recommendations
+          on what learning path is best for you.
+        </p>
+
+        <button class="btn btn-lg cta-btn px-5">Get Started</button>
       </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-12 col-lg-6 image-holder">
+        <img src="https://www.edx.org/_next/image?url=https%3A%2F%2Fimages.cdn.edx.org%2Fattachment-225044b5951fd9dcf1a878bdbd8d96bba01b5d8eee25f.jpg&w=1080&q=75" class="img-fluid diagonal-img" alt="">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===========FEATURNIG COIRSE============ -->
+<div class="container-fluid py-5">
+
+    <h2 class="fw-bold text-center mb-3" style="font-size: 3.5rem;">
+        Find your perfect learning format
+    </h2>
+
+    <p class="text-center fs-5 mb-5">
+        edX offers many ways to learn and grow your skills. Choose the format that works best for you.
+    </p>
+
+    <div class="row g-4">
+
+        <!-- CARD 1 -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="border rounded-4 overflow-hidden bg-white h-100">
+                <div class="p-4" style="background:#e7e1d4;">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-book fs-1"></i>
+                        <h4 class="fw-bold ms-3">Individual courses</h4>
+                    </div>
+                    <p>Learn a new skill anywhere, anytime.</p>
+                </div>
+
+                <div class="p-4">
+                    <p><i class="bi bi-clock"></i> 2–6 weeks</p>
+                    <p><i class="bi bi-card-checklist"></i> Earn a verified certificate</p>
+                    <p><i class="bi bi-graph-up"></i> Upskill quickly</p>
+
+                    <button class="btn btn-dark w-100 rounded-pill mt-3">
+                        Explore courses
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="border rounded-4 overflow-hidden bg-white h-100">
+                <div class="p-4" style="background:#e7e1d4;">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-display fs-1"></i>
+                        <h4 class="fw-bold ms-3">Certificate programs</h4>
+                    </div>
+                    <p>Combine multiple courses into a well-rounded program.</p>
+                </div>
+
+                <div class="p-4">
+                    <p><i class="bi bi-clock"></i> 8–12 weeks</p>
+                    <p><i class="bi bi-card-checklist"></i> Earn multiple certificates</p>
+                    <p><i class="bi bi-graph-up"></i> Upskill on a deeper level</p>
+
+                    <button class="btn btn-dark w-100 rounded-pill mt-3">
+                        Explore programs
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="border rounded-4 overflow-hidden bg-white h-100">
+                <div class="p-4" style="background:#a9b6b3;">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-globe-americas fs-1"></i>
+                        <h4 class="fw-bold ms-3">Executive Education</h4>
+                    </div>
+                    <p>Deepen your expertise with classes designed by experts.</p>
+                </div>
+
+                <div class="p-4">
+                    <p><i class="bi bi-clock"></i> 6–20+ weeks</p>
+                    <p><i class="bi bi-card-checklist"></i> Earn credentials</p>
+                    <p><i class="bi bi-graph-up"></i> Grow career-critical skills</p>
+
+                    <button class="btn btn-dark w-100 rounded-pill mt-3">
+                        Explore Executive Education
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="border rounded-4 overflow-hidden bg-white h-100">
+                <div class="p-4" style="background:#d0d7d3;">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-mortarboard fs-1"></i>
+                        <h4 class="fw-bold ms-3">Online degrees</h4>
+                    </div>
+                    <p>Earn your degree from a prestigious university.</p>
+                </div>
+
+                <div class="p-4">
+                    <p><i class="bi bi-clock"></i> 1.5–3 years</p>
+                    <p><i class="bi bi-award"></i> Earn a degree</p>
+                    <p><i class="bi bi-graph-up"></i> Become an expert</p>
+
+                    <button class="btn btn-dark w-100 rounded-pill mt-3">
+                        Explore degrees
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+ 
+<!-- ===== MAIN SECTION ===== -->
+<div class="main-bg">
+    <section class="container py-5 text-center">
+
+    <!-- Heading -->
+    <h1 class="fw-bold display-4 mb-4">
+        Learn something new with edX
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="lead mb-5">
+        edX helps learners around the world grow their skills and careers.
+        Join our learning community today!
+    </p>
+
+    <!-- Statistics Row -->
+    <div class="row text-center g-4">
+
+        <!-- 1 -->
+        <div class="col-md-3 divider">
+            <div class="stat-number">86M</div>
+            <p class="mt-2">global learners, in nearly every industry, are upskilling with edX.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-md-3 divider">
+            <div class="stat-number">84%</div>
+            <p class="mt-2">of edX learners have seen professional growth after earning a certificate.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-md-3 divider">
+            <div class="stat-number">140K</div>
+            <p class="mt-2">professionals have had their lives changed through Executive Education.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-md-3">
+            <div class="stat-number">42K</div>
+            <p class="mt-2">edX learners have already found their degree program this year.</p>
+        </div>
+    </div>
+
+    <!-- CTA Link -->
+    <div class="mt-5">
+        <a href="#" class="cta-link">Explore courses and degrees today</a>
+    </div>
+</section>
+</div>
+
+<!-- ==================Testimonial Section================ -->
+ <section class="py-5" style="background-color:#f2f3ec;">
+    <div class="container">
+
+        <!-- Heading -->
+        <h2 class="text-center fw-bold display-5 mb-5" style="color:#00302e;">
+            Hear what other learners have to say
+        </h2>
+
+        <!-- Testimonial Cards -->
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+                    <p style="font-size:2rem; color:#c74b00;">❝</p>
+                    <p class="flex-grow-1">
+                        I'm a fan of edX's new way of learning. Thousands of people can study from anywhere in the world. It's inspiring!
+                    </p>
+
+                    <a href="#" class="fw-semibold" style="color:#00302e;">Show more</a>
+
+                    <hr>
+
+                    <div class="d-flex align-items-center">
+                         <img src="https://www.edx.org/_next/image?url=https%3A%2F%2Fimages.cdn.edx.org%2Fattachment-21775sarah-riggot.jpg&w=256&q=75" 
+                             class="rounded-circle me-3" width="60" height="56">
+                        <div>
+                            <h6 class="fw-bold mb-0">Sarah Riggott</h6>
+                            <small class="text-muted">Guatemala</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+                    <p style="font-size:2rem; color:#c74b00;">❝</p>
+                    <p class="flex-grow-1">
+                        I believe that poor kids can learn too, but how many of them actually have the opportunity? edX is creating a real chance.
+                    </p>
+
+                    <a href="#" class="fw-semibold" style="color:#00302e;">Show more</a>
+
+                    <hr>
+
+                    <div class="d-flex align-items-center">
+                        <img src="https://www.edx.org/_next/image?url=https%3A%2F%2Fimages.cdn.edx.org%2Fattachment-21774ulysse-toussaint.jpg&w=256&q=75" 
+                             class="rounded-circle me-3" width="60" height="56">
+                        <div>
+                            <h6 class="fw-bold mb-0">Ulysse Toussaint</h6>
+                            <small class="text-muted">Pennsylvania</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm border-0 rounded-4 h-100">
+                    <p style="font-size:2rem; color:#c74b00;">❝</p>
+                    <p class="flex-grow-1">
+                        I’m hard of hearing, which makes it difficult and exhausting to follow regular courses. Thanks to edX, learning is accessible.
+                    </p>
+
+                    <a href="#" class="fw-semibold" style="color:#00302e;">Show more</a>
+
+                    <hr>
+
+                    <div class="d-flex align-items-center">
+                        <img src="https://www.edx.org/_next/image?url=https%3A%2F%2Fimages.cdn.edx.org%2Fattachment-21775sarah-riggot.jpg&w=256&q=75" 
+                             class="rounded-circle me-3" width="60" height="56">
+                        <div>
+                            <h6 class="fw-bold mb-0">Sandy Van den Borne</h6>
+                            <small class="text-muted">Belgium</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ==================HORIZONTAL CARD==================== -->
+<div class="container-fluid my-5">
+  <div class="learning-section">
+    <div class="row align-items-center">
+
+      <!-- LEFT TEXT -->
+      <div class="col-12 col-lg-6 p-5 text-white">
+        <h2 class="fw-bold mb-3">
+          <em class="fs-1">Empower every member of your team</em>
+        </h2>
+
+        <p class="mb-4 fs-5">
+        Discover edX Enterprise Subscriptions <br>
+
+Give your employees unlimited access to courses and certificate programs in topics like AI, sustainability, and leadership.
+        </p>
+
+        <button class="btn btn-lg cta-btn px-5">Discover enterprise solutions</button>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-12 col-lg-6 image-holder">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid diagonal-img" alt="">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- =================Popular topics================= -->
+  <div class="container py-5">
+        <!-- Header -->
+        <h2 class="fw-bold mb-4 text-dark">Popular topics</h2>
+
+        <!-- Grid System -->
+        <!-- row-cols-lg-5 creates the 5-column layout on large screens -->
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+            <!-- Card 1: Artificial Intelligence -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-lightbulb topic-icon display-4 mb-3"><span class="fs-6 text-danger position-absolute"></span></i>
+                        <h6 class="fw-bold mb-0">Artificial Intelligence</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Leadership -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-people topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Leadership</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Supply Chain -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-diagram-3 topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Supply Chain</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Computer Programming -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-grid-3x3 topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Computer Programming</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Probability -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-shuffle topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Probability</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Python -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-code-slash topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Python</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: Machine Learning -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-laptop topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Machine Learning</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: Computer Science -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-window-stack topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Computer Science</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9: Writing -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-file-text topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Writing</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10: Statistics -->
+            <div class="col">
+                <div class="card h-100 border rounded-4 shadow-sm topic-card py-4">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                        <i class="bi bi-bar-chart topic-icon display-4 mb-3"></i>
+                        <h6 class="fw-bold mb-0">Statistics</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!--==============disover more =============-->
+    <section class="container py-5">
+        <div class="row align-items-center">
+            
+            <!-- TEXT COLUMN -->
+            <!-- col-12 means full width on mobile, col-lg-6 means half width on desktop -->
+            <div class="col-12 col-lg-6 pe-lg-5">
+                <h1 class="display-4 fw-bold fst-italic text-brand-dark mb-4">
+                    Discover more than a classroom — join a global community.
+                </h1>
+
+                <ul class="list-unstyled benefits-list">
+                    <li class="d-flex align-items-start">
+                        <span class="me-2">•</span>
+                        <span>
+                            Access world-class education from institutions like 
+                            <a href="#">Harvard</a>, <a href="#">MIT</a>, and <a href="#">Cambridge</a>.
+                        </span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <span class="me-2">•</span>
+                        <span>
+                            Learn from anywhere in the world with online courses, certificates, and degrees.
+                        </span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <span class="me-2">•</span>
+                        <span>
+                            Connect with edX's global network of ambitious learners.
+                        </span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <span class="me-2">•</span>
+                        <span>
+                            Find a range of programs covering diverse topics for all types of students.
+                        </span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <span class="me-2">•</span>
+                        <span>
+                            Engage with expert-led curricula via flexible, hybrid, and 100% online options.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- IMAGE COLUMN -->
+            <!-- d-none: Hides on ALL screens by default (Mobile/Tablet) -->
+            <!-- d-lg-block: Shows ONLY on Large screens (Desktop) and up -->
+            <div class="col-lg-6 d-none d-lg-block ps-0">
+                <!-- Using a placeholder image of a laptop/student to match context -->
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Student using laptop" 
+                     class="slanted-image shadow-lg">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================== Register for a free account ========================== -->
+    <section class="bg-brand-dark py-5 text-center text-white">
+        
+        <!-- Container keeps content contained and responsive -->
+        <div class="container py-lg-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    
+                    <!-- Heading -->
+                    <!-- display-3: Large text -->
+                    <!-- fw-bold: Bold weight -->
+                    <!-- fst-italic: Italic style -->
+                    <h1 class="display-3 fw-bold fst-italic mb-3">
+                        Register for a free account
+                    </h1>
+
+                    <!-- Subtext -->
+                    <!-- fs-5: Slightly larger than normal paragraph text -->
+                    <p class="fs-5 mb-4">
+                        Sign up now.
+                    </p>
+
+                    <!-- Button -->
+                    <!-- rounded-pill: Makes the button fully round -->
+                    <!-- px-4 py-2: Adds padding inside the button -->
+                    <a href="#" class="btn btn-brand-orange rounded-pill px-4 py-2 fw-semibold">
+                        Get started
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br><br>
+
+<!-- ========================== poplar subject ========================== -->
+  <div class="container">
+        <!-- Main Label -->
+        <h6 class="section-label mb-4">Popular Subjects</h6>
+
+        <!-- Grid Layout -->
+        <!-- Mobile: 1 column, Tablet: 2 columns, Desktop: 3 columns -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+
+            <!-- COLUMN 1: Computer Science -->
+            <div class="col">
+                <h3 class="fw-bold mb-4 category-header">
+                    Computer Science <i class="bi bi-chevron-right fs-5 ms-1 text-muted"></i>
+                </h3>
+                <div class="list-unstyled">
+                    <a href="#" class="subject-link">Azure</a>
+                    <a href="#" class="subject-link">Blockchain</a>
+                    <a href="#" class="subject-link">C Programming</a>
+                    <a href="#" class="subject-link">DevOps</a>
+                    <a href="#" class="subject-link">Django</a>
+                    <a href="#" class="subject-link">Full Stack Development</a>
+                    <a href="#" class="subject-link">HTML</a>
+                    <a href="#" class="subject-link">Java</a>
+                    <a href="#" class="subject-link">JavaScript</a>
+                    <a href="#" class="subject-link">Python</a>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: Language -->
+            <div class="col">
+                <h3 class="fw-bold mb-4 category-header">
+                    Language <i class="bi bi-chevron-right fs-5 ms-1 text-muted"></i>
+                </h3>
+                <div class="list-unstyled">
+                    <a href="#" class="subject-link">Chinese</a>
+                    <a href="#" class="subject-link">English</a>
+                    <a href="#" class="subject-link">ESL</a>
+                    <a href="#" class="subject-link">Grammar</a>
+                    <a href="#" class="subject-link">Italian</a>
+                    <a href="#" class="subject-link">Japanese</a>
+                    <a href="#" class="subject-link">Mandarin</a>
+                    <a href="#" class="subject-link">Sign Language</a>
+                    <a href="#" class="subject-link">Spanish</a>
+                    <a href="#" class="subject-link">Writing</a>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: Data Science -->
+            <div class="col">
+                <h3 class="fw-bold mb-4 category-header">
+                    Data Science <i class="bi bi-chevron-right fs-5 ms-1 text-muted"></i>
+                </h3>
+                <div class="list-unstyled">
+                    <a href="#" class="subject-link">Artificial Intelligence</a>
+                    <a href="#" class="subject-link">Big Data</a>
+                    <a href="#" class="subject-link">Cloud Computing</a>
+                    <a href="#" class="subject-link">Computer Programming</a>
+                    <a href="#" class="subject-link">Data Analysis</a>
+                    <a href="#" class="subject-link">Data Mining</a>
+                    <a href="#" class="subject-link">Machine Learning</a>
+                    <a href="#" class="subject-link">Power BI</a>
+                    <a href="#" class="subject-link">Python</a>
+                    <a href="#" class="subject-link">Quantum Computing</a>
+                </div>
+            </div>
+
+            <!-- COLUMN 4: Business & Management -->
+            <div class="col">
+                <h3 class="fw-bold mb-4 category-header">
+                    Business & Management <i class="bi bi-chevron-right fs-5 ms-1 text-muted"></i>
+                </h3>
+                <div class="list-unstyled">
+                    <a href="#" class="subject-link">Business Administration</a>
+                    <a href="#" class="subject-link">Business Analysis</a>
+                    <a href="#" class="subject-link">Corporate Finance</a>
+                    <a href="#" class="subject-link">Economics</a>
+                    <a href="#" class="subject-link">Entrepreneurship</a>
+                    <a href="#" class="subject-link">Finance</a>
+                    <a href="#" class="subject-link">Financial Literacy</a>
+                    <a href="#" class="subject-link">Leadership</a>
+                    <a href="#" class="subject-link">Project Management</a>
+                    <a href="#" class="subject-link">Statistics</a>
+                </div>
+            </div>
+
+            <!-- COLUMN 5: Engineering -->
+            <div class="col">
+                <h3 class="fw-bold mb-4 category-header">
+                    Engineering <i class="bi bi-chevron-right fs-5 ms-1 text-muted"></i>
+                </h3>
+                <div class="list-unstyled">
+                    <a href="#" class="subject-link">Aerospace Engineering</a>
+                    <a href="#" class="subject-link">Biomedical Engineering</a>
+                    <a href="#" class="subject-link">Chemical Engineering</a>
+                    <a href="#" class="subject-link">Civil Engineering</a>
+                    <a href="#" class="subject-link">Computer Engineering</a>
+                    <a href="#" class="subject-link">Electrical Engineering</a>
+                    <a href="#" class="subject-link">Industrial Engineering</a>
+                    <a href="#" class="subject-link">Mechanical Engineering</a>
+                    <a href="#" class="subject-link">Software Engineering</a>
+                    <a href="#" class="subject-link">Structural Engineering</a>
+                </div>
+            </div>
+
+            <!-- COLUMN 6: Humanities -->
+            <div class="col">
+                <h3 class="fw-bold mb-4 category-header">
+                    Humanities <i class="bi bi-chevron-right fs-5 ms-1 text-muted"></i>
+                </h3>
+                <div class="list-unstyled">
+                    <a href="#" class="subject-link">Art</a>
+                    <a href="#" class="subject-link">Child Development</a>
+                    <a href="#" class="subject-link">Epidemics</a>
+                    <a href="#" class="subject-link">Fashion</a>
+                    <a href="#" class="subject-link">History</a>
+                    <a href="#" class="subject-link">Human Anatomy</a>
+                    <a href="#" class="subject-link">Literature</a>
+                    <a href="#" class="subject-link">Psychology</a>
+                    <a href="#" class="subject-link">Public Speaking</a>
+                    <a href="#" class="subject-link">Shakespeare</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<br>
+    <!-- ========================== FOOTER ========================== -->
+       <footer class="bg-brand-dark text-white pt-5 pb-4">
+        <div class="container">
+            
+            <!-- SECTION 1: Logo & Socials -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <!-- Placeholder for Logo -->
+                   <img src="https://www.edx.org/trademark-logos/edx-by-2u-white.svg"  style="width: 80px;" alt="">
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="social-btn me-2"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="social-btn me-2"><i class="bi bi-twitter fs-5"></i></a> <!-- Using X icon or Twitter -->
+                    <a href="#" class="social-btn me-2"><i class="bi bi-linkedin fs-5"></i></a>
+                    <a href="#" class="social-btn"><i class="bi bi-reddit fs-5"></i></a>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Main Links (Course Categories) -->
+            <!-- row-cols-2 makes it 2 columns on mobile, row-cols-lg-4 makes it 4 on desktop -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+                
+                <!-- Column 1 -->
+                <div class="col">
+                    <h6 class="footer-heading text-uppercase fw-bold mb-3">Browse Courses</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="footer-link">Learn AI</a></li>
+                        <li><a href="#" class="footer-link">Learn ChatGPT</a></li>
+                        <li><a href="#" class="footer-link">Learn Spanish</a></li>
+                        <li><a href="#" class="footer-link">Learn Python</a></li>
+                        <li><a href="#" class="footer-link">Learn Excel</a></li>
+                        <li><a href="#" class="footer-link">Learn Software Engineering</a></li>
+                        <li><a href="#" class="footer-link">Learn Blockchain</a></li>
+                        <li><a href="#" class="footer-link">Learn Computer Programming</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col">
+                    <h6 class="footer-heading text-uppercase fw-bold mb-3">Step-by-Step Guides</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="footer-link">Become a Cybersecurity Analyst</a></li>
+                        <li><a href="#" class="footer-link">Become a Data Scientist</a></li>
+                        <li><a href="#" class="footer-link">Become a Social Media Manager</a></li>
+                        <li><a href="#" class="footer-link">Become a Software Developer</a></li>
+                        <li><a href="#" class="footer-link">see more Guides</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col">
+                    <h6 class="footer-heading text-uppercase fw-bold mb-3">Complete Your Bachelor's Online</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="footer-link">Bachelor's in Business</a></li>
+                        <li><a href="#" class="footer-link">Bachelor's in Computer Science</a></li>
+                        <li><a href="#" class="footer-link">Bachelor's in Health and Nursing</a></li>
+                        <li><a href="#" class="footer-link">Bachelor's in Accounting</a></li>
+                        <li><a href="#" class="footer-link">Bachelor's in Finance</a></li>
+                        <li><a href="#" class="footer-link">see more Undergraduate Degrees</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="col">
+                    <h6 class="footer-heading text-uppercase fw-bold mb-3">Earn Your Online Graduate Degree</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="footer-link">Master's in Business Administration</a></li>
+                        <li><a href="#" class="footer-link">Master's in Public Health</a></li>
+                        <li><a href="#" class="footer-link">Master's in Social Work</a></li>
+                        <li><a href="#" class="footer-link">Master's in Nursing</a></li>
+                        <li><a href="#" class="footer-link">Master's in Data Science</a></li>
+                        <li><a href="#" class="footer-link">Master's in Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+<hr>
+            <!-- DIVIDER -->
+            <hr class="footer-divider my-5">
+
+            <!-- SECTION 3: Corporate Links & Language -->
+            <div class="row g-4">
+                
+                <!-- Links Section (Left side) -->
+                <div class="col-lg-8">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Edx Links -->
+                        <div class="col">
+                            <h6 class="fw-bold mb-3">edX</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-2">
+                                <li><a href="#" class="footer-link">Partner With Us</a></li>
+                                <li><a href="#" class="footer-link">About</a></li>
+                                <li><a href="#" class="footer-link">edX For Business</a></li>
+                                <li><a href="#" class="footer-link">Affiliates</a></li>
+                                <li><a href="#" class="footer-link">Open edX</a></li>
+                                <li><a href="#" class="footer-link">Careers</a></li>
+                                <li><a href="#" class="footer-link">News</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Connect Links -->
+                        <div class="col">
+                            <h6 class="fw-bold mb-3">Connect</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-2">
+                                <li><a href="#" class="footer-link">Idea Hub</a></li>
+                                <li><a href="#" class="footer-link">Contact Us</a></li>
+                                <li><a href="#" class="footer-link">Help Center</a></li>
+                                <li><a href="#" class="footer-link">Security</a></li>
+                                <li><a href="#" class="footer-link">Media Kit</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Legal Links -->
+                        <div class="col">
+                            <h6 class="fw-bold mb-3">Legal</h6>
+                            <ul class="list-unstyled d-flex flex-column gap-2">
+                                <li><a href="#" class="footer-link">Terms of Service & Honor Code</a></li>
+                                <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                                <li><a href="#" class="footer-link">Cookie Policy</a></li>
+                                <li><a href="#" class="footer-link">Accessibility Policy</a></li>
+                                <li><a href="#" class="footer-link">Trademark Policy</a></li>
+                                <li><a href="#" class="footer-link">Sitemap</a></li>
+                                <li><a href="#" class="footer-link">Your Privacy Choices</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language Selector (Right Side) -->
+                <div class="col-lg-4 text-lg-end">
+                    <label class="mb-2 d-block text-start text-lg-end">Choose your language</label>
+                    <div class="d-flex justify-content-lg-end">
+                        <select class="form-select w-auto me-2 lang-select">
+                            <option selected>English</option>
+                            <option>Español</option>
+                            <option>Français</option>
+                        </select>
+                        <button class="btn btn-apply px-4">Apply</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Copyright & App Badges -->
+            <div class="row align-items-end mt-5 pt-3">
+                
+                <!-- Copyright -->
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="small text-white-50 mb-1">© 2025 edX LLC. All rights reserved.</p>
+                    <p class="small text-white-50 mb-0">深圳市恒宇博科技有限公司</p>
+                </div>
+
+                <!-- App Store Badges -->
+                <div class="col-md-6 text-md-end">
+                    <!-- Using placeholder images for buttons to keep it pure HTML/CSS without external assets -->
+                    <div class="d-inline-flex gap-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" height="40">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40">
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </footer>
 
-    <script src="assets/script.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom Script -->
+    <script src="script.js"></script>
   </body>
 </html>

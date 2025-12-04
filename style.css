@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --edx-navy: #022c3e;
+  --edx-red: #d23f00; /* Official edX Brand Color */
+  --edx-card-footer: #F0EFE9;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= NAVBAR STYLING ================= */
+.navbar {
+  background-color: #fff;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-brand img {
+  height: 35px; /* Fixed height for alignment */
+  width: auto;
+}
+
+/* Learn Dropdown Button */
+.border-0 {
+  gap: 5px;
+  color: white;
+  padding: 7px 15px;
+  background-color: var(--edx-navy);
+}
+.btn-learn:hover {
+  color: var(--edx-navy);
+  background: white !important;
+}
+
+/* Desktop Search Bar */
+.search-container {
+  flex-grow: 1; /* Fills available space */
+  max-width: 600px; /* Prevents it from getting too wide */
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-container input {
+  border-radius: 0; /* Square edges like original */
+  border: 1px solid #000;
+  padding: 10px 15px;
+  padding-right: 40px; /* Space for icon */
+  height: 44px;
+}
+
+.search-container input:focus {
+  box-shadow: none;
+  border-color: var(--edx-navy);
+}
+
+.search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background: var(--edx-navy);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #034059;
+}
+
+/* Right Side Links */
+.nav-link-custom {
+  color: var(--edx-navy);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+
+.btn-register {
+  background-color: var(--edx-red);
+  color: white;
+  font-weight: 700;
+  border-radius: 0; /* Square edges */
+  padding: 10px 24px;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn-outline-danger {
+  --bs-btn-hover-bg: var(--edx-red);
+}
+
+/* .btn-register:hover {
+        background-color: var(--edx-red);
+        color: white;
+      } */
+
+/* ================= MOBILE MENU ================= */
+#mobileMenu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+  transition: 0.4s;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  padding: 60px 0;
+  background-image: url("../assets/images/hero-bg.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-title {
+  color: var(--edx-navy);
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Course Cards */
+.course-cards {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-brand {
+  padding: 15px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  background: url(../assets/images/course-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.left-card-brand {
+  background: url(../assets/images/course-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-body-dark {
+  background-color: var(--edx-navy);
+  color: white;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.badge-custom {
+  background: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 5px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991px) {
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hero {
+    text-align: center;
+  }
+  .hero .d-flex {
+    justify-content: center;
+  }
+}
+
+/* ================= PARTNER LOGOS SECTION ================= */
+.partners-section {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.partner-logo {
+  max-height: 50px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(0%); /* Ensure colors are visible */
+  transition: transform 0.2s;
+  padding: 5px;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+/*========================= TRENDING EDX =====================*/
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;;
+}
+
+.card-footer {
+  background: var(--edx-card-footer);
+  border: 1px solid var(--edx-card-footer);
+  width: fit-content;
+  padding: 10px 15px;
+}
+
+/* Default: Desktop & tablets — normal wrapping */
+.category-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Small screens: horizontal scroll */
+@media (max-width: 576px) {
+  .category-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    padding-bottom: 10px;
+
+    /* Hide scrollbar (optional) */
+    -ms-overflow-style: none; /* IE */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .category-scroll::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .category-btn {
+    flex: 0 0 auto; /* prevent wrapping */
+    white-space: nowrap;
+  }
+}
+
+.trending-title {
+  color: var(--edx-navy);
+  font-size: 50px;
+}
+.learning-section {
+  background: #0f2f2a;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* The diagonal mask applies ONLY on LG screens */
+@media (min-width: 992px) {
+  .image-holder {
+    padding: 0;
+    position: relative;
+  }
+
+  .diagonal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* KEY PART — the diagonal cut */
+    clip-path: polygon(
+      12% 0%,   /* top-left diagonal */
+      100% 0%, 
+      100% 100%, 
+      0% 100%   /* bottom-left normal */
+    );
+  }
+}
+
+/* Small & medium screens = normal image */
+@media (max-width: 991px) {
+  .diagonal-img {
+    clip-path: none;
+    border-radius: 20px;
+  }
+}
+
+.star-icon {
+  font-size: 2rem;
+  color: #ffb347;
+}
+
+.cta-btn {
+  background: #e85510;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.2rem;
+}
+
+.main-bg {
+    background: #EDEBE3;
+}
+
+
+/* main section */
+.stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #002b29;
+        }
+
+        .divider {
+            border-right: 2px solid #ddd;
+        }
+        @media (max-width: 767px) {
+            .divider {
+                border-right: none;
+                border-bottom: 2px solid #ddd;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+        }
+
+        .cta-link {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: underline;
+            color: #002b29;
+        }
+        /* POPULAR TOPIC */
+        /* Custom tweaks to match the image aesthetics closer than default Bootstrap */
+        .topic-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #fdfdfd; /* Very light off-white */
+            cursor: pointer;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            border-color: #dee2e6 !important;
+        }
+        /* Styling the icons to mimic the image style (line art look) */
+        .topic-icon {
+            color: #212529;
+        }
+        /* Adding the pink accent color from the original image */
+        .accent-pink {
+            color: #e6a4b4; /* Soft pink color from the image */
+        }
+
+        /* disover more  */
+        /* Custom styles to match the specific look of the screenshot */
+        
+        /* The specific dark teal color from the text */
+        .text-brand-dark {
+            color: #103c34; 
+        }
+
+        /* Creates the slanted angle on the left side of the image */
+        .slanted-image {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Slightly larger font for the list items */
+        .benefits-list li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #4a4a4a;
+        }
+
+        .benefits-list a {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+
+        /* ==============Register for a free account============= */
+            /* Custom Colors to match the screenshot */
+        .bg-brand-dark {
+            background-color: #00262b; /* Deep Dark Teal */
+        }
+        
+        .btn-brand-orange {
+            background-color: #d9430d; /* Burnt Orange */
+            color: white;
+            border: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-brand-orange:hover {
+            background-color: #b9360a; /* Slightly darker on hover */
+            color: white;
+        }
+
+        /* ===================footer=============== */
+           /* Custom Theme Colors */
+        .bg-brand-dark {
+            background-color: #00262b; /* Deep Dark Teal */
+        }
+        
+        /* Typography adjustments */
+        .footer-heading {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-link {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Social Media Icons (White Circle, Dark Icon) */
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #00262b;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.1);
+            color: #00262b;
+        }
+
+        /* Language Selector styling */
+        .lang-select {
+            background-color: white;
+            border: none;
+            border-radius: 0;
+            color: #212529;
+        }
+        
+        .btn-apply {
+            border: 1px solid white;
+            color: white;
+            border-radius: 20px;
+        }
+        
+        .btn-apply:hover {
+            background-color: white;
+            color: #00262b;
+        }
+
+        /* Custom Separator Line */
+        .footer-divider {
+            border-color: rgba(255,255,255,0.1);
+        }
+        
+/*=============== pupular sbject========= */
+   /* Custom Styles to match the screenshot */
+        .subject-link {
+            color: #212529; /* Dark grey/black */
+            text-decoration: none;
+            transition: color 0.2s, padding-left 0.2s;
+            display: block;
+            margin-bottom: 0.75rem; /* Spacing between items */
+            font-size: 1.3rem;
+        }
+
+        .subject-link:hover {
+            color: var(--edx-navy); /* Blue on hover */
+            text-decoration: underline;
+        }
+
+        .category-header {
+            cursor: pointer;
+        }
+        
+        .category-header:hover {
+            text-decoration: underline;
+        }
+
+        /* The small monospace header at the top */
+        .section-label {
+            font-family: monospace; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
