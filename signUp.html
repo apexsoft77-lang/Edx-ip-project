@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>edX Sign In / Register Clone</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css">
+
+ 
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <div class="row g-0 main-container">
+        <!-- LEFT SIDE: Branding -->
+        <div class="col-lg-5 col-12 brand-section">
+          <!-- Simple SVG Logo Placeholder -->
+          <div class="logo">
+            <svg
+              viewBox="0 0 80 40"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M10 25 L15 25 L20 15 L25 25 L30 25 L22 10 L18 10 Z" />
+              <text
+                x="35"
+                y="25"
+                font-family="Arial"
+                font-weight="bold"
+                font-size="20"
+                fill="white"
+              >
+                edX
+              </text>
+            </svg>
+          </div>
+
+          <h1 class="hero-text">
+            Start<br />
+            learning<br />
+            <span class="text-green">with edX</span>
+          </h1>
+        </div>
+
+        <!-- RIGHT SIDE: Forms -->
+        <div class="col-lg-7 col-12 form-section">
+          <!-- Tabs -->
+          <div class="auth-tabs">
+            <div
+              class="auth-tab active"
+              id="tab-register"
+              onclick="switchTab('register')"
+            >
+              Register
+            </div>
+            <div class="auth-tab" id="tab-signin" onclick="switchTab('signin')">
+              Sign in
+            </div>
+          </div>
+          <!-- REGISTER FORM -->
+          <div id="form-register-container">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Full name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Public username</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <div class="password-wrapper">
+                  <input type="password" class="form-control" id="reg-pass" />
+                  <i
+                    class="fa fa-eye toggle-password"
+                    onclick="togglePassword('reg-pass')"
+                  ></i>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Country/Region</label>
+                <select class="form-select">
+                  <option>Ethiopia</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                </select>
+              </div>
+
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="marketing"
+                />
+                <label class="form-check-label small" for="marketing"
+                  >I agree that edX may send me marketing messages.</label
+                >
+              </div>
+
+              <p class="small text-muted mb-4">
+                By creating an account, you agree to the
+                <a href="#">Terms of Service and Honor Code</a> and you
+                acknowledge that edX and each Member process your personal data
+                in accordance with the <a href="#">Privacy Policy</a>.
+              </p>
+
+              <button type="button" class="btn btn-primary-edx">
+                Create an account for free
+              </button>
+            </form>
+          </div>
+
+          <!-- SIGN IN FORM (Initially Hidden) -->
+          <div id="form-signin-container" class="hidden">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Username or email</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <div class="password-wrapper">
+                  <input type="password" class="form-control" id="login-pass" />
+                  <i
+                    class="fa fa-eye toggle-password"
+                    onclick="togglePassword('login-pass')"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <button
+                  type="button"
+                  class="btn btn-primary-edx"
+                  style="width: auto; padding-left: 30px; padding-right: 30px"
+                >
+                  Sign in
+                </button>
+                <a href="#" class="forgot-link">Forgot password</a>
+              </div>
+            </form>
+          </div>
+
+          <!-- SOCIAL LOGIN -->
+          <div class="mt-4">
+            <h6 class="fw-bold" id="social-header">Or register with:</h6>
+            <p class="small text-muted">
+              <i class="fas fa-university"></i> Company or school credentials
+            </p>
+            <div class="social-grid">
+              <a href="#" class="social-btn btn-apple">
+                <i class="fab fa-apple"></i> Apple
+              </a>
+              <a href="#" class="social-btn btn-facebook">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+              <a href="#" class="social-btn btn-google">
+                <i class="fab fa-google"></i> Google
+              </a>
+              <a href="#" class="social-btn btn-microsoft">
+                <i class="fab fa-microsoft"></i> Microsoft
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for Interaction -->
+  <script src="script.js"></script>
+  </body>
+</html>
