@@ -1,15 +1,20 @@
-## 🏷️ Badges
+<div align="center">
+  <br />
+         <img src="assets/images/README-IMG.png" alt="">
+  <br />
+  
+  <div>
+    <img src="https://img.shields.io/badge/-html5-black?style=for-the-badge&logoColor=white&logo=html5&color=61DAFB" alt="html5" />
+    <img src="https://img.shields.io/badge/-css3-black?style=for-the-badge&logoColor=white&logo=css3&color=FD366E" alt="vite" />
+    <img src="https://img.shields.io/badge/-vscode-black?style=for-the-badge&logoColor=white&logo=vscode&color=blue" alt="vscode" />
+    <img src="https://img.shields.io/badge/-bootstrap-black?style=for-the-badge&logoColor=white&logo=bootstrap&color=06B6D4" alt="tailwindcss" />
+  </div>
+  <br/>
+ <h1>🌐 EDX Clone – HTML & CSS University Project</h1>
+ </div>
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Responsive Design](https://img.shields.io/badge/Responsive-Design-34A853?style=for-the-badge&logo=googlechrome&logoColor=white)
-![Static Website](https://img.shields.io/badge/Static-Website-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![University Project](https://img.shields.io/badge/University-Project-8E44AD?style=for-the-badge&logo=bookstack&logoColor=white)
-
-# 🌐 EDX Clone – HTML & CSS University Project
-
-A simple, responsive, and visually appealing **EDX-inspired online learning platform UI**, created as a university project using **pure HTML and CSS**.  
-This project focuses on layout design, responsive pages, and modern UI components without any JavaScript or backend.
+A simple, responsive, and visually appealing **EDX-inspired online learning platform UI**, created as a university project using **HTML, CSS, bootstrap, js**.  
+This project focuses on layout design, responsive pages, and modern UI components without any backend.
 
 ---
 
@@ -39,7 +44,7 @@ Our focus was on responsive UI, layout structure, and design quality.
 ### 🛠️ Core Technologies
 - **HTML5** – Semantic structure for all pages  
 - **CSS3** – Styling, layout, animations  
-- **CSS Flexbox** – Modern layout system for alignment  
+- **bootstrap** – Modern layout system for alignment
 - **CSS Grid** – Page structure and responsiveness  
 
 ### 🎨 Design & UI Tools
@@ -59,11 +64,6 @@ Our focus was on responsive UI, layout structure, and design quality.
 
 ---
 
-## 📁 Folder Structure
-
-
----
-
 ## 🚀 How to Run
 Simply open the main file in your browser:
 
@@ -74,10 +74,10 @@ No installation required.
 ---
 
 ## 📸 Screenshots
-> Add your own screenshots inside the folder above.
-
-
-
+<div align="center">
+  <h1>Mobile version</h1>
+  <img src="assets/images/README-MOBILE5.png" alt="">
+</div>
 
 ## 🎓 Project Purpose
 This project was created for a **University Web Development Course** to practice:
@@ -86,12 +86,6 @@ This project was created for a **University Web Development Course** to practice
 - Creating modern UI layouts  
 - Working with Flexbox & Grid  
 - Building responsive websites with pure HTML & CSS  
-
----
-
-## 🤝 Contribution
-This is an academic project, but contributions and improvements are welcome!  
-Feel free to fork the repository and submit your ideas.
 
 ---
 
