@@ -14,15 +14,25 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
- </head>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+</head>
   <body>
     <div class="container-fluid p-0">
       <div class="row g-0 main-container">
         <!-- LEFT SIDE: Branding -->
         <div class="col-lg-5 col-12 brand-section">
-          <!-- Simple SVG Logo Placeholder -->
+          <!-- Simple SVG Logo -->
           <div class="logo">
             <svg
               viewBox="0 0 80 40"
@@ -65,9 +75,10 @@
               Sign in
             </div>
           </div>
+          
           <!-- REGISTER FORM -->
           <div id="form-register-container">
-            <form>
+            <form onsubmit="event.preventDefault()">
               <div class="mb-3">
                 <label class="form-label">Full name</label>
                 <input type="text" class="form-control" />
@@ -86,17 +97,17 @@
                   <input type="password" class="form-control" id="reg-pass" />
                   <i
                     class="fa fa-eye toggle-password"
-                    onclick="togglePassword('reg-pass')"
+                    onclick="togglePassword('reg-pass', this)"
                   ></i>
                 </div>
               </div>
               <div class="mb-3">
                 <label class="form-label">Country/Region</label>
                 <select class="form-select">
-                  <option>Ethiopia</option>
                   <option>United States</option>
                   <option>United Kingdom</option>
                   <option>Canada</option>
+                  <option>Ethiopia</option>
                 </select>
               </div>
 
@@ -118,7 +129,7 @@
                 in accordance with the <a href="#">Privacy Policy</a>.
               </p>
 
-              <button type="button" class="btn btn-primary-edx">
+              <button type="submit" class="btn btn-primary-edx">
                 Create an account for free
               </button>
             </form>
@@ -126,7 +137,7 @@
 
           <!-- SIGN IN FORM (Initially Hidden) -->
           <div id="form-signin-container" class="hidden">
-            <form>
+            <form onsubmit="event.preventDefault()">
               <div class="mb-3">
                 <label class="form-label">Username or email</label>
                 <input type="text" class="form-control" />
@@ -137,16 +148,16 @@
                   <input type="password" class="form-control" id="login-pass" />
                   <i
                     class="fa fa-eye toggle-password"
-                    onclick="togglePassword('login-pass')"
+                    onclick="togglePassword('login-pass', this)"
                   ></i>
                 </div>
               </div>
 
-              <div class="d-flex align-items-center mb-4">
+              <div class="d-flex flex-column flex-sm-row align-items-center mb-4">
                 <button
-                  type="button"
-                  class="btn btn-primary-edx"
-                  style="width: auto; padding-left: 30px; padding-right: 30px"
+                  type="submit"
+                  class="btn btn-primary-edx mb-3 mb-sm-0 me-sm-3"
+                  style="width: auto; padding-left: 30px; padding-right: 30px; min-width: 140px;"
                 >
                   Sign in
                 </button>
@@ -156,9 +167,9 @@
           </div>
 
           <!-- SOCIAL LOGIN -->
-          <div class="mt-4">
+          <div class="mt-4 pt-3 border-top">
             <h6 class="fw-bold" id="social-header">Or register with:</h6>
-            <p class="small text-muted">
+            <p class="small text-muted mb-3">
               <i class="fas fa-university"></i> Company or school credentials
             </p>
             <div class="social-grid">
@@ -181,6 +192,6 @@
     </div>
 
     <!-- JavaScript for Interaction -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

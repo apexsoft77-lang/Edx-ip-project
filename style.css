@@ -375,10 +375,6 @@ body {
   color: #e6a4b4; /* Soft pink color from the image */
 }
 
-/* disover more  */
-/* Custom styles to match the specific look of the screenshot */
-
-/* The specific dark teal color from the text */
 .text-brand-dark {
   color: #103c34;
 }
@@ -402,32 +398,24 @@ body {
   color: #0d6efd;
   text-decoration: underline;
 }
-
-/* ==============Register for a free account============= */
-/* Custom Colors to match the screenshot */
-.bg-brand-dark {
-  background-color: #00262b; /* Deep Dark Teal */
+:root {
+  --edx-teal: #00262b;
+  --edx-red: #d23f00;
+  --edx-green: #43cea2;
+  --edx-pink: #e66f7e;
 }
 
-.btn-brand-orange {
-  background-color: #d9430d; /* Burnt Orange */
-  color: white;
-  border: none;
-  transition: background-color 0.2s;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--edx-teal);
 }
-
-.btn-brand-orange:hover {
-  background-color: #b9360a; /* Slightly darker on hover */
-  color: white;
-}
-
-/* ===========sign up form============= */
 
 /* --- Layout Container --- */
 .main-container {
   min-height: 100vh;
   background-color: var(--edx-teal);
   display: flex;
+  overflow-x: hidden;
 }
 
 /* --- Left Side (Brand) --- */
@@ -463,12 +451,12 @@ body {
   top: 5px;
   bottom: 5px;
   width: 4px;
-  background-color: #e66f7e;
+  background-color: var(--edx-pink);
   transform: skewX(-15deg);
 }
 
 .text-green {
-  color: #43cea2;
+  color: var(--edx-green);
 }
 
 /* --- Right Side (Form) --- */
@@ -486,7 +474,8 @@ body {
   .form-section {
     /* Create the diagonal cut on the left side */
     clip-path: polygon(10vh 0, 100% 0, 100% 100%, 0% 100%);
-    padding-left: 120px; /* Extra padding to account for slant */
+    padding-left: 140px; /* Extra padding to account for slant */
+    min-height: 100vh;
   }
 }
 
@@ -517,6 +506,11 @@ body {
 }
 
 /* --- Form Elements --- */
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
 .form-control,
 .form-select {
   border-radius: 4px;
@@ -525,7 +519,7 @@ body {
   font-size: 0.95rem;
 }
 
-.form-control:focus {
+.form-control:focus, .form-select:focus {
   box-shadow: none;
   border-color: black;
 }
@@ -542,6 +536,7 @@ body {
   cursor: pointer;
   color: #666;
 }
+
 .btn-primary-edx {
   background-color: var(--edx-red);
   border: none;
@@ -562,7 +557,13 @@ body {
   color: #555;
   text-decoration: none;
   font-size: 0.9rem;
-  margin-left: 15px;
+  margin-left: 0;
+}
+
+@media (min-width: 576px) {
+  .forgot-link {
+    margin-left: 15px;
+  }
 }
 
 /* --- Social Buttons --- */
@@ -576,6 +577,7 @@ body {
 .social-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 8px 15px;
   border: none;
   color: white;
@@ -583,24 +585,23 @@ body {
   font-weight: 500;
   text-decoration: none;
   border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.social-btn:hover {
+  color: white;
+  opacity: 0.9;
 }
 
 .social-btn i {
   margin-right: 10px;
   font-size: 1.1rem;
 }
-.btn-apple {
-  background-color: #000;
-}
-.btn-facebook {
-  background-color: #1877f2;
-}
-.btn-google {
-  background-color: #4285f4;
-}
-.btn-microsoft {
-  background-color: #2f2f2f;
-}
+
+.btn-apple { background-color: #000; }
+.btn-facebook { background-color: #1877f2; }
+.btn-google { background-color: #4285f4; }
+.btn-microsoft { background-color: #2f2f2f; }
 
 .hidden {
   display: none !important;
@@ -615,24 +616,22 @@ body {
 
   .brand-section {
     padding: 30px 20px;
-    min-height: 200px;
+    min-height: 250px;
   }
 
   .hero-text {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .form-section {
     padding: 30px 20px;
     width: 100%;
-    border-top-left-radius: 0;
-  }
-
-  /* Remove clip-path on mobile so it stacks normally */
-  .form-section {
-    clip-path: none;
+    /* Important: Remove clip path on mobile */
+    clip-path: none !important;
+    min-height: auto;
   }
 }
+
 
 /* ===================footer=============== */
 /* Custom Theme Colors */
