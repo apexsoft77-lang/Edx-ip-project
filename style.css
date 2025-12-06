@@ -6,6 +6,11 @@
   --edx-card-footer: #f0efe9;
   --edx-teal: #0b2e35; /* Dark teal background */
   --edx-blue: #0056d2; /* Link color */
+  --edx-teal: #00262b;
+  --edx-red: #d23f00;
+  --edx-green: #43cea2;
+  --edx-pink: #e66f7e;
+
 }
 
 body {
@@ -102,6 +107,17 @@ body {
   color: var(--edx-red);
   background-color: transparent;
 }
+
+.btn-signIn {
+  color: var(--edx-red);
+}
+
+.btn-signIn:hover {
+    border: solid 1px var(--edx-red);
+  color: white;
+  background-color: var(--edx-red);
+}
+
 
 /* Fix for the 'Learn more' button (Bootstrap's btn-outline-danger) */
 .btn-outline-danger:hover {
@@ -397,17 +413,6 @@ body {
 .benefits-list a {
   color: #0d6efd;
   text-decoration: underline;
-}
-:root {
-  --edx-teal: #00262b;
-  --edx-red: #d23f00;
-  --edx-green: #43cea2;
-  --edx-pink: #e66f7e;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--edx-teal);
 }
 
 /* --- Layout Container --- */
